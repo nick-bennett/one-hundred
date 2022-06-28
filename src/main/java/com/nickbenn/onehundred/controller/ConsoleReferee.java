@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 
 public class ConsoleReferee {
 
-    private static final Pattern ALL_CHARACTERS = Pattern.compile(".*", Pattern.DOTALL);
+    private static final Pattern ALL_CHARACTERS = Pattern.compile(".*");
     private final Strategy strategy;
     private final GamePresentation<?> presentation;
     private final Scanner scanner;
