@@ -9,9 +9,11 @@ import com.nickbenn.onehundred.view.Keys;
 import java.util.InputMismatchException;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class ConsoleReferee {
 
+    private static final Pattern ALL_CHARACTERS = Pattern.compile(".*", Pattern.DOTALL);
     private final Strategy strategy;
     private final GamePresentation<?> presentation;
     private final Scanner scanner;
@@ -58,7 +60,7 @@ public class ConsoleReferee {
                 System.out.print(presentation.movePresentation(move, playerName));
                 validMove = true;
             } catch (IllegalMoveException | InputMismatchException e) {
-                scanner.skip(".*");
+                scanner.skip(ALL_CHARACTERS);
                 System.out.print(presentation.illegalMoveNotification(game));
             }
         } while (!validMove);
