@@ -11,6 +11,13 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+/**
+ * Manages user interaction&mdash;with corresponding updates to the game state&mdash;through completion of a single
+ * game. As the game progresses, an instance of {@link GamePresentation} is used to display the current state, and
+ * prompt the user for the next move; all of this is orchestrated in a simple invocation of the {@link #play()}. This
+ * class also uses an instance of {@link Strategy} for the computer's moves; typically, this will be an instance of
+ * {@link com.nickbenn.onehundred.strategy.OptimalStrategy}.
+ */
 public class ConsoleReferee {
 
     private static final Pattern ALL_CHARACTERS = Pattern.compile(".*");
@@ -22,7 +29,17 @@ public class ConsoleReferee {
     private final String computerName;
     private final String firstMovePattern;
 
-
+    /**
+     * This is a summary.
+     *
+     * @param strategy
+     * @param presentation
+     * @param scanner
+     * @param bundle
+     * @param target
+     * @param maxMove
+     * @param initialState
+     */
     public ConsoleReferee(Strategy strategy, GamePresentation<?> presentation, Scanner scanner, ResourceBundle bundle,
                           int target, int maxMove, Game.State initialState) {
         this.strategy = strategy;
@@ -34,6 +51,9 @@ public class ConsoleReferee {
         firstMovePattern = bundle.getString(Keys.FIRST_MOVE);
     }
 
+    /**
+     *
+     */
     public void play() {
         Game.State state;
         System.out.printf(firstMovePattern,

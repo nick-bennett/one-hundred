@@ -4,6 +4,9 @@ import com.nickbenn.onehundred.model.exception.GameFinishedException;
 import com.nickbenn.onehundred.model.exception.IllegalConfigurationException;
 import com.nickbenn.onehundred.model.exception.IllegalMoveException;
 
+/**
+ *
+ */
 public class Game {
 
     private static final String INVALID_TARGET_MOVE_FORMAT =
@@ -14,6 +17,13 @@ public class Game {
     private int sum;
     private State state;
 
+    /**
+     *
+     * @param target
+     * @param maxMove
+     * @param initialState
+     * @throws IllegalConfigurationException
+     */
     public Game(int target, int maxMove, State initialState) throws IllegalConfigurationException {
         if (maxMove <= 0 || maxMove >= target) {
             throw new IllegalConfigurationException(String.format(INVALID_TARGET_MOVE_FORMAT, target, maxMove));

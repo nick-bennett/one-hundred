@@ -10,6 +10,10 @@ import com.nickbenn.onehundred.view.TextGamePresentation;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
+/**
+ * Implements entry point for console-mode implementation of <strong>"One Hundred"</strong> game.
+ * <p>&lt; = less-than sign. &gt; = greater-than sign. &amp; = ampersand.</p>
+ */
 public class Main {
 
     private static final String BUNDLE_NAME = "strings";
@@ -17,13 +21,17 @@ public class Main {
     private static final int DEFAULT_TARGET = 100;
     private static final int DEFAULT_MAX_MOVE = 6;
 
-    public static void main(String[] args) throws Strategy.StrategyInitializationException {
+    /**
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
         int target = (args.length > 0) ? Integer.parseInt(args[0]) : DEFAULT_TARGET;
         int maxMove = (args.length > 1) ? Integer.parseInt(args[1]) : DEFAULT_MAX_MOVE;
         String strategyKey = (args.length > 2) ? args[2] : DEFAULT_STRATEGY;
-        Game.State state = Game.State.PLAYER_ONE_MOVE;
+        ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE_NAME);
         try (Scanner scanner = new Scanner(System.in)) {
-            ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE_NAME);
+            Game.State state = Game.State.PLAYER_ONE_MOVE;
             String playAgainPrompt = bundle.getString(Keys.PLAY_AGAIN);
             String negativeResponse = bundle.getString(Keys.NEGATIVE_RESPONSE);
             Strategy strategy = Strategy.newInstance(strategyKey);
@@ -36,6 +44,9 @@ public class Main {
                         ? Game.State.PLAYER_TWO_MOVE
                         : Game.State.PLAYER_ONE_MOVE;
             } while (keepPlaying(scanner, playAgainPrompt, negativeResponse));
+        } catch (Strategy.StrategyInitializationException e) {
+            System.out.printf(bundle.getString(Keys.STRATEGY_INITIALIZATION_ERROR), strategyKey, e);
+            e.printStackTrace();
         }
     }
 

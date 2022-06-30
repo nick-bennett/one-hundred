@@ -1,5 +1,8 @@
 package com.nickbenn.onehundred.view;
 
+/**
+ *
+ */
 public abstract class Keys {
 
     public static final String GAME_SUMMARY = "game_summary";
@@ -13,5 +16,7 @@ public abstract class Keys {
     public static final String ILLEGAL_MOVE = "illegal_move";
     public static final String PLAY_AGAIN = "play_again";
     public static final String NEGATIVE_RESPONSE = "negative_response";
+
+    public static final String STRATEGY_INITIALIZATION_ERROR = "strategy_initialization_error";
 
 }

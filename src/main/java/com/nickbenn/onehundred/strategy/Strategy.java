@@ -26,6 +26,8 @@ public interface Strategy {
             Class<? extends Strategy> klass = (Class<? extends Strategy>) Class.forName(className);
             Constructor<?> constructor = klass.getConstructor(Random.class);
             return (Strategy) constructor.newInstance(rng);
+        } catch (InvocationTargetException e) {
+            throw new StrategyInitializationException(String.format("Unable to create instance of %s strategy.", key), e.getCause());
         } catch (Exception e) {
             throw new StrategyInitializationException(String.format("Unable to create instance of %s strategy.", key), e);
         }
