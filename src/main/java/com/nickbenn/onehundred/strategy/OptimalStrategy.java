@@ -4,6 +4,7 @@ import com.nickbenn.onehundred.model.Game;
 
 import java.util.Random;
 
+@SuppressWarnings("unused")
 public class OptimalStrategy implements Strategy {
 
     private final Random rng;

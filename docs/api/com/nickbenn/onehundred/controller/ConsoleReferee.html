@@ -26,12 +26,6 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
-var altColor = "altColor";
-var rowColor = "rowColor";
-var tableTab = "tableTab";
-var activeTableTab = "activeTableTab";
 var pathtoroot = "../../../../";
 var useModuleDirectories = true;
 loadScripts(document, 'script');</script>
@@ -87,16 +81,16 @@ loadScripts(document, 'script');</script>
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method.detail">Method</a></li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li>Method</li>
 </ul>
 </div>
 <a id="skip.navbar.top">
@@ -122,7 +116,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
+<li><a href="Referee.html" title="class in com.nickbenn.onehundred.controller">com.nickbenn.onehundred.controller.Referee</a></li>
+<li>
+<ul class="inheritance">
 <li>com.nickbenn.onehundred.controller.ConsoleReferee</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -130,43 +129,36 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <hr>
-<pre>public class <span class="typeNameLabel">ConsoleReferee</span>
-extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
+<pre>public final class <span class="typeNameLabel">ConsoleReferee</span>
+extends <a href="Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></pre>
 <div class="block">Manages user interaction&mdash;with corresponding updates to the game state&mdash;through completion of a single
  game. As the game progresses, an instance of <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation</code></a> is used to display the current state, and
- prompt the user for the next move; all of this is orchestrated in a simple invocation of the <a href="#play()"><code>play()</code></a>. This
- class also uses an instance of <a href="../strategy/Strategy.html" title="interface in com.nickbenn.onehundred.strategy"><code>Strategy</code></a> for the computer's moves; typically, this will be an instance of
- <a href="../strategy/OptimalStrategy.html" title="class in com.nickbenn.onehundred.strategy"><code>OptimalStrategy</code></a>.</div>
+ prompt the user for the next move; all of this is orchestrated in a simple invocation of the <a href="Referee.html#play()"><code>Referee.play()</code></a>. This
+ class also uses an instance of <a href="../strategy/Strategy.html" title="interface in com.nickbenn.onehundred.strategy"><code>Strategy</code></a> for the computer's moves.</div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<!-- ======== NESTED CLASS SUMMARY ======== -->
 <section role="region">
 <ul class="blockList">
-<li class="blockList"><a id="constructor.summary">
+<li class="blockList"><a id="nested.class.summary">
 <!--   -->
 </a>
-<h3>Constructor Summary</h3>
+<h3>Nested Class Summary</h3>
 <table class="memberSummary">
-<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
-<th class="colFirst" scope="col">Constructor</th>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Class</th>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.nickbenn.onehundred.strategy.Strategy,com.nickbenn.onehundred.view.GamePresentation,java.util.Scanner,java.util.ResourceBundle,int,int,com.nickbenn.onehundred.model.Game.State)">ConsoleReferee</a></span>&#8203;(<a href="../strategy/Strategy.html" title="interface in com.nickbenn.onehundred.strategy">Strategy</a>&nbsp;strategy,
-              <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;?&gt;&nbsp;presentation,
-              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html?is-external=true" title="class or interface in java.util" class="externalLink">Scanner</a>&nbsp;scanner,
-              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ResourceBundle.html?is-external=true" title="class or interface in java.util" class="externalLink">ResourceBundle</a>&nbsp;bundle,
-              int&nbsp;target,
-              int&nbsp;maxMove,
-              <a href="../model/Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a>&nbsp;initialState)</code></th>
-<td class="colLast">
-<div class="block">This is a summary.</div>
-</td>
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="ConsoleReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleReferee.Builder</a></span></code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -179,86 +171,19 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <!--   -->
 </a>
 <h3>Method Summary</h3>
-<table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colSecond" scope="col">Method</th>
-<th class="colLast" scope="col">Description</th>
-</tr>
-<tr id="i0" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#play()">play</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-</table>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.com.nickbenn.onehundred.controller.Referee">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;com.nickbenn.onehundred.controller.<a href="Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></h3>
+<code><a href="Referee.html#play()">play</a></code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
-</ul>
-</li>
-</ul>
-</section>
-</li>
-</ul>
-</div>
-<div class="details">
-<ul class="blockList">
-<li class="blockList">
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<section role="region">
-<ul class="blockList">
-<li class="blockList"><a id="constructor.detail">
-<!--   -->
-</a>
-<h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(com.nickbenn.onehundred.strategy.Strategy,com.nickbenn.onehundred.view.GamePresentation,java.util.Scanner,java.util.ResourceBundle,int,int,com.nickbenn.onehundred.model.Game.State)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>ConsoleReferee</h4>
-<pre>public&nbsp;ConsoleReferee&#8203;(<a href="../strategy/Strategy.html" title="interface in com.nickbenn.onehundred.strategy">Strategy</a>&nbsp;strategy,
-                      <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;?&gt;&nbsp;presentation,
-                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html?is-external=true" title="class or interface in java.util" class="externalLink">Scanner</a>&nbsp;scanner,
-                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ResourceBundle.html?is-external=true" title="class or interface in java.util" class="externalLink">ResourceBundle</a>&nbsp;bundle,
-                      int&nbsp;target,
-                      int&nbsp;maxMove,
-                      <a href="../model/Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a>&nbsp;initialState)</pre>
-<div class="block">This is a summary.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>strategy</code> - </dd>
-<dd><code>presentation</code> - </dd>
-<dd><code>scanner</code> - </dd>
-<dd><code>bundle</code> - </dd>
-<dd><code>target</code> - </dd>
-<dd><code>maxMove</code> - </dd>
-<dd><code>initialState</code> - </dd>
-</dl>
-</li>
-</ul>
-</li>
-</ul>
-</section>
-<!-- ============ METHOD DETAIL ========== -->
-<section role="region">
-<ul class="blockList">
-<li class="blockList"><a id="method.detail">
-<!--   -->
-</a>
-<h3>Method Detail</h3>
-<a id="play()">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>play</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;play()</pre>
-</li>
 </ul>
 </li>
 </ul>
@@ -311,16 +236,16 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method.detail">Method</a></li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li>Method</li>
 </ul>
 </div>
 <a id="skip.navbar.bottom">

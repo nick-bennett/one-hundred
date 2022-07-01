@@ -1,95 +1,134 @@
 package com.nickbenn.onehundred.controller;
 
 import com.nickbenn.onehundred.model.Game;
-import com.nickbenn.onehundred.model.exception.IllegalMoveException;
+import com.nickbenn.onehundred.model.exception.IllegalConfigurationException;
 import com.nickbenn.onehundred.strategy.Strategy;
 import com.nickbenn.onehundred.view.GamePresentation;
-import com.nickbenn.onehundred.view.Keys;
 
-import java.util.InputMismatchException;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ResourceBundle;
-import java.util.Scanner;
-import java.util.regex.Pattern;
 
 /**
  * Manages user interaction&mdash;with corresponding updates to the game state&mdash;through completion of a single
  * game. As the game progresses, an instance of {@link GamePresentation} is used to display the current state, and
  * prompt the user for the next move; all of this is orchestrated in a simple invocation of the {@link #play()}. This
- * class also uses an instance of {@link Strategy} for the computer's moves; typically, this will be an instance of
- * {@link com.nickbenn.onehundred.strategy.OptimalStrategy}.
+ * class also uses an instance of {@link Strategy} for the computer's moves.
  */
-public class ConsoleReferee {
+public final class ConsoleReferee extends Referee {
 
-    private static final Pattern ALL_CHARACTERS = Pattern.compile(".*");
+    private static final String NULL_STRATEGY_MESSAGE =
+            "strategy must be a non-null reference to an instance of a Strategy implementation.";
+    private static final String NULL_BUNDLE_MESSAGE =
+            "bundle must be a non-null reference to an instance of ResourceBundle.";
+    private static final String NULL_INPUT_MESSAGE =
+            "input parameter must be a non-null reference to an instance of InputStream.";
+    private static final String DEFAULT_STRATEGY_KEY = "optimal";
+
     private final Strategy strategy;
-    private final GamePresentation<?> presentation;
-    private final Scanner scanner;
-    private final Game game;
+    private final BufferedReader reader;
     private final String playerName;
     private final String computerName;
-    private final String firstMovePattern;
 
     /**
      * This is a summary.
      *
-     * @param strategy
-     * @param presentation
-     * @param scanner
-     * @param bundle
-     * @param target
-     * @param maxMove
-     * @param initialState
+     * @param builder
      */
-    public ConsoleReferee(Strategy strategy, GamePresentation<?> presentation, Scanner scanner, ResourceBundle bundle,
-                          int target, int maxMove, Game.State initialState) {
-        this.strategy = strategy;
-        this.presentation = presentation;
-        this.scanner = scanner;
-        game = new Game(target, maxMove, initialState);
+    private ConsoleReferee(Builder builder) {
+        super(builder);
+        if (builder.strategy == null) {
+            throw new IllegalConfigurationException(NULL_STRATEGY_MESSAGE);
+        }
+        if (builder.bundle == null) {
+            throw new IllegalConfigurationException(NULL_BUNDLE_MESSAGE);
+        }
+        if (builder.input == null) {
+            throw new IllegalConfigurationException(NULL_INPUT_MESSAGE);
+        }
+        strategy = builder.strategy;
+        reader = new BufferedReader(new InputStreamReader(builder.input));
+        ResourceBundle bundle = builder.bundle;
         playerName = bundle.getString(Keys.PLAYER_NAME);
         computerName = bundle.getString(Keys.COMPUTER_NAME);
-        firstMovePattern = bundle.getString(Keys.FIRST_MOVE);
     }
 
-    /**
-     *
-     */
-    public void play() {
-        Game.State state;
-        System.out.printf(firstMovePattern,
-                (game.getState() == Game.State.PLAYER_ONE_MOVE) ? playerName : computerName);
-        while (!(state = game.getState()).isTerminal()) {
-            if (state == Game.State.PLAYER_ONE_MOVE) {
-                getAndApplyUserMove();
-            } else {
-                getAndApplyComputerMove();
-            }
+    @Override
+    void presentState() {
+        System.out.print(getPresentation().stateRepresentation(getGame(), playerName, computerName));
+    }
+
+    @Override
+    void presentNextMove() {
+        System.out.print(getPresentation().nextMoveNotice(
+                (getGame().getState() == Game.State.PLAYER_ONE_MOVE) ? playerName : computerName));
+    }
+
+    @Override
+    int getMove() {
+        try {
+            Game game = getGame();
+            return (game.getState() == Game.State.PLAYER_ONE_MOVE) ? getUserMove() : strategy.getNextMove(game);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-        System.out.print(presentation.stateRepresentation(game, playerName, computerName));
     }
 
-    private void getAndApplyUserMove() {
-        System.out.print(presentation.stateRepresentation(game, playerName, computerName));
-        boolean validMove = false;
-        do {
-            System.out.print(presentation.movePrompt(game));
-            int move = 0;
-            try {
-                move = scanner.nextInt();
-                game.play(move);
-                System.out.print(presentation.movePresentation(move, playerName));
-                validMove = true;
-            } catch (IllegalMoveException | InputMismatchException e) {
-                scanner.skip(ALL_CHARACTERS);
-                System.out.print(presentation.illegalMoveNotification(game));
-            }
-        } while (!validMove);
+    @Override
+    void presentCompletedMove(Game.State state, int move) {
+        System.out.print(getPresentation().movePresentation(move,
+                (state == Game.State.PLAYER_ONE_MOVE ? playerName : computerName)));
     }
 
-    private void getAndApplyComputerMove() {
-        int move = strategy.getNextMove(game);
-        game.play(move);
-        System.out.print(presentation.movePresentation(move, computerName));
+    @Override
+    void presentError(Object presentation) {
+        System.out.print(presentation);
+    }
+
+    private int getUserMove() throws IOException {
+        System.out.print(getPresentation().movePrompt(getGame()));
+        String input = reader.readLine().trim();
+        return Integer.parseInt(input);
+    }
+
+    @SuppressWarnings({"UnusedReturnValue", "unused"})
+    public static class Builder extends Referee.Builder<Builder> {
+
+        private final ResourceBundle bundle;
+
+        private Strategy strategy;
+        private InputStream input;
+
+        public Builder(GamePresentation<?> presentation, ResourceBundle bundle)
+                throws Strategy.StrategyInitializationException {
+            super(presentation);
+            this.bundle = bundle;
+            strategy = Strategy.newInstance(DEFAULT_STRATEGY_KEY);
+            input = System.in;
+        }
+
+        public Builder setStrategy(Strategy strategy) {
+            this.strategy = strategy;
+            return self();
+        }
+
+        public Builder setInputStream(InputStream input) {
+            this.input = input;
+            return self();
+        }
+
+        @Override
+        protected Builder self() {
+            return this;
+        }
+
+        @Override
+        public ConsoleReferee build() {
+            return new ConsoleReferee(this);
+        }
+
     }
 
 }

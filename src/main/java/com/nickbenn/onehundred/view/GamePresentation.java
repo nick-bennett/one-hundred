@@ -16,6 +16,8 @@ public interface GamePresentation<T> {
      */
     T stateRepresentation(Game game, String playerOne, String playerTwo);
 
+    T nextMoveNotice(String player);
+
     /**
      *
      * @param move

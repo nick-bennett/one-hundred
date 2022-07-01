@@ -2,7 +2,6 @@ package com.nickbenn.onehundred.strategy;
 
 import com.nickbenn.onehundred.model.Game;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
