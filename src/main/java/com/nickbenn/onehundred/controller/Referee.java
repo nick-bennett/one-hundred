@@ -7,7 +7,7 @@ import com.nickbenn.onehundred.view.GamePresentation;
 public abstract class Referee {
 
     private static final String NULL_PRESENTATION_MESSAGE =
-            "Value of presentation parameter must be a non-null reference to an instance of GamePresentation.";
+            "presentation must be a non-null reference to an instance of GamePresentation.";
 
     private final GamePresentation<?> presentation;
     private final Game game;
