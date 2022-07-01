@@ -1,6 +1,6 @@
 package com.nickbenn.onehundred;
 
-import com.nickbenn.onehundred.controller.ConsoleReferee;
+import com.nickbenn.onehundred.controller.ConsoleSolitaireReferee;
 import com.nickbenn.onehundred.controller.Referee;
 import com.nickbenn.onehundred.model.Game;
 import com.nickbenn.onehundred.strategy.Strategy;
@@ -16,7 +16,6 @@ import java.util.ResourceBundle;
 
 /**
  * Implements entry point for console-mode implementation of <strong>"One Hundred"</strong> game.
- * <p>&lt; = less-than sign. &gt; = greater-than sign. &amp; = ampersand.</p>
  */
 public class Main {
 
@@ -37,19 +36,7 @@ public class Main {
             String negativeResponse = bundle.getString(Keys.NEGATIVE_RESPONSE);
             GamePresentation<String> presentation = new TextGamePresentation(bundle);
             do {
-                ConsoleReferee.Builder builder =
-                        new ConsoleReferee.Builder(presentation, bundle).setInitialState(state);
-                if (args.length > 0) {
-                    builder.setTarget(Integer.parseInt(args[0]));
-                    if (args.length > 1) {
-                        builder.setMaxMove(Integer.parseInt(args[1]));
-                        if (args.length > 2) {
-                            builder.setStrategy(Strategy.newInstance(args[2]));
-                        }
-                    }
-                }
-                Referee referee = builder.build();
-                referee.play();
+                playOnce(args, bundle, state, presentation);
                 state = (state == Game.State.PLAYER_ONE_MOVE)
                         ? Game.State.PLAYER_TWO_MOVE
                         : Game.State.PLAYER_ONE_MOVE;
@@ -62,10 +49,27 @@ public class Main {
         }
     }
 
+    private static void playOnce(String[] args, ResourceBundle bundle, Game.State state, GamePresentation<String> presentation) throws Strategy.StrategyInitializationException {
+        ConsoleSolitaireReferee.Builder builder =
+                new ConsoleSolitaireReferee.Builder(presentation, bundle).setInitialState(state);
+        if (args.length > 0) {
+            builder.setTarget(Integer.parseInt(args[0]));
+            if (args.length > 1) {
+                builder.setMaxMove(Integer.parseInt(args[1]));
+                if (args.length > 2) {
+                    builder.setStrategy(Strategy.newInstance(args[2]));
+                }
+            }
+        }
+        Referee referee = builder.build();
+        referee.play();
+    }
+
     private static boolean keepPlaying(BufferedReader reader, String prompt, String negativeResponse)
             throws IOException {
         System.out.print(prompt);
         String response = reader.readLine().trim().toLowerCase();
         return (!response.startsWith(negativeResponse));
     }
+
 }

@@ -1,21 +1,16 @@
 package com.nickbenn.onehundred.controller;
 
 import com.nickbenn.onehundred.model.Game;
-import com.nickbenn.onehundred.model.exception.IllegalConfigurationException;
 import com.nickbenn.onehundred.view.GamePresentation;
 
-public abstract class Referee {
+import java.util.Objects;
 
-    private static final String NULL_PRESENTATION_MESSAGE =
-            "presentation must be a non-null reference to an instance of GamePresentation.";
+public abstract class Referee {
 
     private final GamePresentation<?> presentation;
     private final Game game;
 
-    Referee(Builder<?> builder) {
-        if (builder.presentation == null) {
-            throw new IllegalConfigurationException(NULL_PRESENTATION_MESSAGE);
-        }
+    protected Referee(Builder<?> builder) {
         presentation = builder.presentation;
         game = new Game(builder.target, builder.maxMove, builder.initialState);
     }
@@ -39,41 +34,41 @@ public abstract class Referee {
         presentState();
     }
 
-    Game getGame() {
+    protected Game getGame() {
         return game;
     }
 
-    abstract void presentState();
+    protected abstract void presentState();
 
-    abstract void presentNextMove();
+    protected abstract void presentNextMove();
 
-    abstract int getMove();
+    protected abstract int getMove();
 
-    void applyMove(int move) {
+    protected void applyMove(int move) {
         game.play(move);
     }
 
-    abstract void presentCompletedMove(Game.State state, int move);
+    protected abstract void presentCompletedMove(Game.State state, int move);
 
-    abstract void presentError(Object presentation);
+    protected abstract void presentError(Object presentation);
 
-    GamePresentation<?> getPresentation() {
+    protected GamePresentation<?> getPresentation() {
         return presentation;
     }
 
     @SuppressWarnings("UnusedReturnValue")
-    abstract static class Builder<B extends Builder<B>> {
+    protected abstract static class Builder<B extends Builder<B>> {
 
-        final GamePresentation<?> presentation;
-        int target;
-        int maxMove;
-        Game.State initialState;
+        private static final String NULL_PRESENTATION_MESSAGE =
+                "presentation must be a non-null reference to an instance of GamePresentation.";
+
+        private final GamePresentation<?> presentation;
+        private int target = Game.DEFAULT_TARGET;
+        private int maxMove = Game.DEFAULT_MAX_MOVE;
+        private Game.State initialState = Game.State.PLAYER_ONE_MOVE;
 
         protected Builder(GamePresentation<?> presentation) {
-            this.presentation = presentation;
-            target = Game.DEFAULT_TARGET;
-            maxMove = Game.DEFAULT_MAX_MOVE;
-            initialState = Game.State.PLAYER_ONE_MOVE;
+            this.presentation = Objects.requireNonNull(presentation, NULL_PRESENTATION_MESSAGE);
         }
 
         public B setInitialState(Game.State initialState) {
@@ -93,7 +88,7 @@ public abstract class Referee {
 
         protected abstract Referee build();
 
-        abstract B self();
+        protected abstract B self();
 
     }
 

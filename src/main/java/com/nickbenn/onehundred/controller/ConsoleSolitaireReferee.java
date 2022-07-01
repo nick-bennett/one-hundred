@@ -1,7 +1,6 @@
 package com.nickbenn.onehundred.controller;
 
 import com.nickbenn.onehundred.model.Game;
-import com.nickbenn.onehundred.model.exception.IllegalConfigurationException;
 import com.nickbenn.onehundred.strategy.Strategy;
 import com.nickbenn.onehundred.view.GamePresentation;
 
@@ -9,22 +8,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 /**
  * Manages user interaction&mdash;with corresponding updates to the game state&mdash;through completion of a single
- * game. As the game progresses, an instance of {@link GamePresentation} is used to display the current state, and
- * prompt the user for the next move; all of this is orchestrated in a simple invocation of the {@link #play()}. This
- * class also uses an instance of {@link Strategy} for the computer's moves.
+ * solitaire (player vs&#x2D; computer) game. As the game progresses, an instance of {@link GamePresentation} is used to
+ * construct the text content displayed to the user, and user input is read from {@link System#in}; all of this is
+ * orchestrated in a simple invocation of {@link #play()}. The actions of the computer opponent are provided by an
+ * instance of {@link Strategy}.
  */
-public final class ConsoleReferee extends Referee {
+public final class ConsoleSolitaireReferee extends Referee {
 
-    private static final String NULL_STRATEGY_MESSAGE =
-            "strategy must be a non-null reference to an instance of a Strategy implementation.";
-    private static final String NULL_BUNDLE_MESSAGE =
-            "bundle must be a non-null reference to an instance of ResourceBundle.";
-    private static final String NULL_INPUT_MESSAGE =
-            "input parameter must be a non-null reference to an instance of InputStream.";
     private static final String DEFAULT_STRATEGY_KEY = "optimal";
 
     private final Strategy strategy;
@@ -37,17 +32,8 @@ public final class ConsoleReferee extends Referee {
      *
      * @param builder
      */
-    private ConsoleReferee(Builder builder) {
+    private ConsoleSolitaireReferee(Builder builder) {
         super(builder);
-        if (builder.strategy == null) {
-            throw new IllegalConfigurationException(NULL_STRATEGY_MESSAGE);
-        }
-        if (builder.bundle == null) {
-            throw new IllegalConfigurationException(NULL_BUNDLE_MESSAGE);
-        }
-        if (builder.input == null) {
-            throw new IllegalConfigurationException(NULL_INPUT_MESSAGE);
-        }
         strategy = builder.strategy;
         reader = new BufferedReader(new InputStreamReader(builder.input));
         ResourceBundle bundle = builder.bundle;
@@ -56,18 +42,18 @@ public final class ConsoleReferee extends Referee {
     }
 
     @Override
-    void presentState() {
+    protected void presentState() {
         System.out.print(getPresentation().stateRepresentation(getGame(), playerName, computerName));
     }
 
     @Override
-    void presentNextMove() {
+    protected void presentNextMove() {
         System.out.print(getPresentation().nextMoveNotice(
                 (getGame().getState() == Game.State.PLAYER_ONE_MOVE) ? playerName : computerName));
     }
 
     @Override
-    int getMove() {
+    protected int getMove() {
         try {
             Game game = getGame();
             return (game.getState() == Game.State.PLAYER_ONE_MOVE) ? getUserMove() : strategy.getNextMove(game);
@@ -77,13 +63,13 @@ public final class ConsoleReferee extends Referee {
     }
 
     @Override
-    void presentCompletedMove(Game.State state, int move) {
+    protected void presentCompletedMove(Game.State state, int move) {
         System.out.print(getPresentation().movePresentation(move,
                 (state == Game.State.PLAYER_ONE_MOVE ? playerName : computerName)));
     }
 
     @Override
-    void presentError(Object presentation) {
+    protected void presentError(Object presentation) {
         System.out.print(presentation);
     }
 
@@ -96,6 +82,13 @@ public final class ConsoleReferee extends Referee {
     @SuppressWarnings({"UnusedReturnValue", "unused"})
     public static class Builder extends Referee.Builder<Builder> {
 
+        private static final String NULL_STRATEGY_MESSAGE =
+                "strategy must be a non-null reference to an instance of a Strategy implementation.";
+        private static final String NULL_BUNDLE_MESSAGE =
+                "bundle must be a non-null reference to an instance of ResourceBundle.";
+        private static final String NULL_INPUT_MESSAGE =
+                "input parameter must be a non-null reference to an instance of InputStream.";
+
         private final ResourceBundle bundle;
 
         private Strategy strategy;
@@ -104,18 +97,18 @@ public final class ConsoleReferee extends Referee {
         public Builder(GamePresentation<?> presentation, ResourceBundle bundle)
                 throws Strategy.StrategyInitializationException {
             super(presentation);
-            this.bundle = bundle;
+            this.bundle = Objects.requireNonNull(bundle, NULL_BUNDLE_MESSAGE);
             strategy = Strategy.newInstance(DEFAULT_STRATEGY_KEY);
             input = System.in;
         }
 
         public Builder setStrategy(Strategy strategy) {
-            this.strategy = strategy;
+            this.strategy = Objects.requireNonNull(strategy, NULL_STRATEGY_MESSAGE);
             return self();
         }
 
         public Builder setInputStream(InputStream input) {
-            this.input = input;
+            this.input = Objects.requireNonNull(input, NULL_INPUT_MESSAGE);
             return self();
         }
 
@@ -125,8 +118,8 @@ public final class ConsoleReferee extends Referee {
         }
 
         @Override
-        public ConsoleReferee build() {
-            return new ConsoleReferee(this);
+        public ConsoleSolitaireReferee build() {
+            return new ConsoleSolitaireReferee(this);
         }
 
     }
