@@ -4,23 +4,37 @@ import com.nickbenn.onehundred.model.Game;
 
 import java.util.Random;
 
+/**
+ *
+ */
 @SuppressWarnings("unused")
 public class RandomStrategy implements Strategy {
 
-    private final Random rng;
+  private final Random rng;
 
-    public RandomStrategy() {
-        this(new Random());
-    }
+  /**
+   *
+   */
+  public RandomStrategy() {
+    this(new Random());
+  }
 
-    public RandomStrategy(Random rng) {
-        this.rng = rng;
-    }
+  /**
+   * @param rng
+   */
+  public RandomStrategy(Random rng) {
+    this.rng = rng;
+  }
 
-    @Override
-    public int getNextMove(Game game) {
-        int winGap = game.getTarget() - game.getSum();
-        int maxMove = game.getMaxMove();
-        return (winGap <= maxMove) ? winGap : (rng.nextInt(maxMove) + 1);
-    }
+  /**
+   * @param game
+   * @return
+   */
+  @Override
+  public int getNextMove(Game game) {
+    int winGap = game.getUpperBound() - game.getCurrentCount();
+    int maxMove = game.getMaxMove();
+    return (winGap <= maxMove) ? winGap : (rng.nextInt(maxMove) + 1);
+  }
+
 }

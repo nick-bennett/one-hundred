@@ -1,18 +1,31 @@
 plugins {
-    id 'java'
+    id 'application'
 }
 
-group 'com.nickbenn'
-version '1.0-SNAPSHOT'
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+application {
+    mainClass = 'com.nickbenn.onehundred.Main'
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    def junitVersion = '5.8.2'
+
+    // Apache Commons Command-line Interface (CLI) library
+    implementation 'commons-cli:commons-cli:1.5.0'
+
+    // JUnit5 unit testing libraries
+    def junitVersion = '5.9.0'
     testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+
 }
 
 test {
@@ -24,8 +37,11 @@ clean {
 }
 
 javadoc {
+
     destinationDir = file("$projectDir/docs/api")
+
     options {
         links "https://docs.oracle.com/en/java/javase/11/docs/api/"
     }
+
 }
