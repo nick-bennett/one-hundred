@@ -1,4 +1,4 @@
-package com.nickbenn.onehundred.strategy;
+package com.nickbenn.onehundred.controller.strategy;
 
 /**
  *
