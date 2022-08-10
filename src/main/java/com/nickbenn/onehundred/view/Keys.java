@@ -19,11 +19,5 @@ public abstract class Keys {
   public static final String MOVE_PROMPT = "move_prompt";
   /** */
   public static final String ILLEGAL_MOVE = "illegal_move";
-  /** */
-  public static final String PLAY_AGAIN = "play_again";
-  /** */
-  public static final String NEGATIVE_RESPONSE = "negative_response";
-  /** */
-  public static final String STRATEGY_INITIALIZATION_ERROR = "strategy_initialization_error";
 
 }

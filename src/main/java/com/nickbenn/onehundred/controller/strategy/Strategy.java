@@ -15,6 +15,8 @@ public interface Strategy {
 
   /**  */
   String PROPERTIES_FILENAME = "strategies.properties";
+  /** */
+  String EXCEPTION_MESSAGE_FORMAT = "strategy \"%s\" not found";
 
   /**
    *
@@ -44,11 +46,9 @@ public interface Strategy {
       Constructor<?> constructor = klass.getConstructor(Random.class);
       return (Strategy) constructor.newInstance(rng);
     } catch (InvocationTargetException e) {
-      throw new StrategyInitializationException(
-          String.format("Unable to create instance of %s strategy.", key), e.getCause());
+      throw new StrategyInitializationException(String.format(EXCEPTION_MESSAGE_FORMAT, key), e.getCause());
     } catch (Exception e) {
-      throw new StrategyInitializationException(
-          String.format("Unable to create instance of %s strategy.", key), e);
+      throw new StrategyInitializationException(String.format(EXCEPTION_MESSAGE_FORMAT, key), e);
     }
   }
 

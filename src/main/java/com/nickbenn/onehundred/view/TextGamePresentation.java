@@ -2,6 +2,7 @@ package com.nickbenn.onehundred.view;
 
 import com.nickbenn.onehundred.model.Game;
 
+import com.nickbenn.onehundred.model.Game.Operation;
 import java.util.ResourceBundle;
 
 /**
@@ -21,7 +22,8 @@ public class TextGamePresentation implements GamePresentation<String> {
    *
    * @param bundle
    */
-  public TextGamePresentation(ResourceBundle bundle) {
+  public TextGamePresentation(Operation operation) {
+    ResourceBundle bundle = ResourceBundle.getBundle(operation.name().toLowerCase());
     winStatePattern = bundle.getString(Keys.WIN_STATE);
     playStatePattern = bundle.getString(Keys.PLAY_STATE);
     summaryPattern = bundle.getString(Keys.GAME_SUMMARY);
@@ -46,8 +48,8 @@ public class TextGamePresentation implements GamePresentation<String> {
     String next = game.getState().isTerminal()
         ? String.format(winStatePattern, player)
         : String.format(playStatePattern, player);
-    return String.format(summaryPattern, game.getUpperBound(), game.getCurrentCount(),
-        game.getUpperBound() - game.getCurrentCount(), next);
+    return String.format(summaryPattern,
+        game.getUpperBound(), game.getCurrentCount(), game.getRemaining(), next);
   }
 
   /**
@@ -78,8 +80,7 @@ public class TextGamePresentation implements GamePresentation<String> {
    */
   @Override
   public String movePrompt(Game game) {
-    return String.format(movePromptPattern,
-        Math.min(game.getMaxMove(), game.getUpperBound() - game.getCurrentCount()));
+    return String.format(movePromptPattern, Math.min(game.getMaxMove(), game.getRemaining()));
   }
 
   /**

@@ -1,7 +1,7 @@
 package com.nickbenn.onehundred.controller;
 
 import com.nickbenn.onehundred.model.Game;
-import com.nickbenn.onehundred.model.Game.Direction;
+import com.nickbenn.onehundred.model.Game.Operation;
 import com.nickbenn.onehundred.view.GamePresentation;
 
 import java.util.Objects;
@@ -12,6 +12,7 @@ import java.util.Objects;
 public abstract class Referee {
 
   private final GamePresentation<?> presentation;
+
   private final Game game;
 
   /**
@@ -19,7 +20,7 @@ public abstract class Referee {
    */
   protected Referee(Builder<?> builder) {
     presentation = builder.presentation;
-    game = new Game(builder.direction, builder.target, builder.maxMove, builder.initialState);
+    game = new Game(builder.operation, builder.target, builder.maxMove, builder.initialState);
   }
 
   /**
@@ -101,7 +102,7 @@ public abstract class Referee {
         "presentation must be a non-null reference to an instance of GamePresentation.";
 
     private final GamePresentation<?> presentation;
-    private Game.Direction direction = Game.DEFAULT_DIRECTION;
+    private Operation operation = Game.DEFAULT_OPERATION;
     private int target = Game.DEFAULT_UPPER_BOUND;
     private int maxMove = Game.DEFAULT_MAX_MOVE;
     private Game.State initialState = Game.State.PLAYER_ONE_MOVE;
@@ -115,10 +116,11 @@ public abstract class Referee {
 
     /**
      *
-     * @param direction
+     * @param operation
      */
-    public void setDirection(Direction direction) {
-      this.direction = direction;
+    public B setOperation(Operation operation) {
+      this.operation = operation;
+      return self();
     }
 
     /**

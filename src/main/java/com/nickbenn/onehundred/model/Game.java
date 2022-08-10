@@ -15,16 +15,17 @@ public class Game {
   /**  */
   public static final int DEFAULT_MAX_MOVE = 10;
   /**  */
-  public static final Direction DEFAULT_DIRECTION = Direction.ADDITION;
+  public static final Operation DEFAULT_OPERATION = Operation.ADDITION;
 
   private static final String INVALID_UPPER_BOUND_MOVE_FORMAT =
       "Game upper bound (%1$d) and max move (%2$d) must both be positive, with upper bound > max move.";
   private static final String INVALID_INITIAL_STATE_FORMAT =
       "%1$s is not a valid initial state.";
 
-  private final Direction direction;
+  private final Operation operation;
   private final int upperBound;
   private final int maxMove;
+  private final int target;
 
   private boolean firstMove;
   private int currentCount;
@@ -36,7 +37,7 @@ public class Game {
    * @param initialState
    * @throws IllegalConfigurationException
    */
-  public Game(Direction direction, int upperBound, int maxMove, State initialState)
+  public Game(Operation operation, int upperBound, int maxMove, State initialState)
       throws IllegalConfigurationException {
     if (maxMove <= 0 || maxMove >= upperBound) {
       throw new IllegalConfigurationException(
@@ -46,20 +47,26 @@ public class Game {
       throw new IllegalConfigurationException(
           String.format(INVALID_INITIAL_STATE_FORMAT, initialState));
     }
-    this.direction = direction;
+    this.operation = operation;
     this.upperBound = upperBound;
     this.maxMove = maxMove;
     state = initialState;
     firstMove = true;
-    currentCount = upperBound * ((1 - direction.getSign()) >> 1);
+    if (operation == Operation.ADDITION) {
+      currentCount = 0;
+      target = upperBound;
+    } else {
+      currentCount = upperBound;
+      target = 0;
+    }
   }
 
   /**
    * @param move
    */
   public void play(int move) {
-    state = state.play(upperBound, maxMove, currentCount, move, direction);
-    currentCount += move * direction.getSign();
+    state = state.play(upperBound, maxMove, currentCount, move, operation);
+    currentCount += move * operation.getSign();
     firstMove = false;
   }
 
@@ -67,8 +74,8 @@ public class Game {
    *
    * @return
    */
-  public Direction getDirection() {
-    return direction;
+  public Operation getOperation() {
+    return operation;
   }
 
   /**
@@ -104,6 +111,16 @@ public class Game {
    */
   public boolean isFirstMove() {
     return firstMove;
+  }
+
+  public int getTarget() {
+    return target;
+  }
+
+  public int getRemaining() {
+    return (operation == Operation.ADDITION)
+        ? target - currentCount
+        : currentCount;
   }
 
   /**
@@ -215,7 +232,7 @@ public class Game {
      * @throws GameFinishedException
      * @throws IllegalMoveException
      */
-    public State play(int upperBound, int maxMove, int count, int move, Direction direction)
+    public State play(int upperBound, int maxMove, int count, int move, Operation operation)
         throws GameFinishedException, IllegalMoveException {
       State nextState;
       if (isTerminal()) {
@@ -225,7 +242,7 @@ public class Game {
         throw new IllegalMoveException(
             String.format(MOVE_TOO_LARGE_FORMAT, maxMove, move));
       }
-      int sign = direction.getSign();
+      int sign = operation.getSign();
       int newCount = count + move * sign;
       if (newCount > upperBound || newCount < 0) {
         throw new IllegalMoveException(
@@ -241,7 +258,7 @@ public class Game {
 
   }
 
-  public enum Direction {
+  public enum Operation {
 
     /**  */
     ADDITION(1),
@@ -250,7 +267,7 @@ public class Game {
 
     private final int sign;
 
-    Direction(int sign) {
+    Operation(int sign) {
       this.sign = sign;
     }
 

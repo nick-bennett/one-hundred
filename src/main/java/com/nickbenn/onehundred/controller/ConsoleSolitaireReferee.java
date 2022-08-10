@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
  */
 public final class ConsoleSolitaireReferee extends Referee {
 
-  private static final String DEFAULT_STRATEGY_KEY = "optimal";
+  public static final String DEFAULT_STRATEGY_KEY = "optimal";
 
   private final Strategy strategy;
   private final BufferedReader reader;

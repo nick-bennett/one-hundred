@@ -34,7 +34,7 @@ public class OptimalStrategy implements Strategy {
   public int getNextMove(Game game) {
     int maxMove = game.getMaxMove();
     int modulus = maxMove + 1;
-    int gap = Math.abs(game.getUpperBound() * ((1 + game.getDirection().getSign()) >> 1) - game.getCurrentCount());
+    int gap = Math.abs(game.getUpperBound() * ((1 + game.getOperation().getSign()) >> 1) - game.getCurrentCount());
     int remainder = gap % modulus;
     return (remainder > 0) ? remainder : Math.min(gap, rng.nextInt(maxMove) + 1);
   }
