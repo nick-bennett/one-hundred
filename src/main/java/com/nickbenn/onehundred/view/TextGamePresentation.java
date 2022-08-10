@@ -20,7 +20,7 @@ public class TextGamePresentation implements GamePresentation<String> {
 
   /**
    *
-   * @param bundle
+   * @param operation
    */
   public TextGamePresentation(Operation operation) {
     ResourceBundle bundle = ResourceBundle.getBundle(operation.name().toLowerCase());

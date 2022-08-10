@@ -1,3 +1,6 @@
+/*
+ * Copyright 2022 Nicholas Bennett. Licensed for use under the MIT License.
+ */
 package com.nickbenn.onehundred;
 
 import com.nickbenn.onehundred.controller.ConsoleSession;
