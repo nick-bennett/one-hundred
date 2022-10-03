@@ -9,7 +9,6 @@ abstract class Keys {
   static final String PLAYER_NAME = "player_name";
   static final String PLAY_AGAIN = "play_again";
   static final String NEGATIVE_RESPONSE = "negative_response";
-  static final String STRATEGY_INITIALIZATION_ERROR = "strategy_initialization_error";
   static final String BOUND_ARG_NAME = "bound_arg_name";
   static final String BOUND_DESCRIPTION_FORMAT = "bound_description_format";
   static final String MAX_MOVE_ARG_NAME = "max_move_arg_name";
@@ -22,4 +21,7 @@ abstract class Keys {
   static final String SYNTAX = "syntax";
   static final String HEADER = "header";
   static final String FOOTER = "footer";
+
+  private Keys() {}
+
 }

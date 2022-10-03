@@ -7,15 +7,15 @@ import com.nickbenn.onehundred.controller.ConsoleSession;
 
 /**
  * Implements entry point for console-mode implementation of <strong>"One Hundred"</strong>, a
- * simple example of "Nim" (which is really an entire category of mathematical games).
+ * simple form of the Nim category of mathematical games.
  */
-public class Main {
+public class ConsoleMain {
 
   /**
    * Entry-point method.
    *
-   * @param args Command-line arguments, which are parsed using
-   * {@link com.nickbenn.onehundred.controller.CommandLineOptions}.
+   * @param args Command-line arguments, which are passed to the
+   * {@link ConsoleSession#ConsoleSession(String[])} constructor.
    */
   public static void main(String[] args) {
     new ConsoleSession(args).run();

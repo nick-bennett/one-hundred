@@ -1,7 +1,7 @@
 package com.nickbenn.onehundred.controller;
 
 import com.nickbenn.onehundred.controller.strategy.Strategy;
-import com.nickbenn.onehundred.controller.strategy.StrategyInitializationException;
+import com.nickbenn.onehundred.controller.strategy.Strategy.StrategyInitializationException;
 import com.nickbenn.onehundred.model.Game;
 import com.nickbenn.onehundred.model.Game.Operation;
 import java.util.ResourceBundle;
@@ -74,7 +74,7 @@ public class CommandLineOptions {
     helpRequested = commandLine.hasOption(HELP_SHORT_OPTION);
   }
 
-  public void printHelp() {
+  public void showHelp() {
     new HelpFormatter().printHelp(syntax, header, options, footer);
   }
 

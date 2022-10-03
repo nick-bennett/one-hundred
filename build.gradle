@@ -12,7 +12,7 @@ java {
 }
 
 application {
-    mainClass = 'com.nickbenn.onehundred.Main'
+    mainClass = 'com.nickbenn.onehundred.ConsoleMain'
 }
 
 repositories {
@@ -25,7 +25,7 @@ dependencies {
     implementation 'commons-cli:commons-cli:1.5.0'
 
     // JUnit5 unit testing libraries
-    def junitVersion = '5.9.0'
+    def junitVersion = '5.9.1'
     testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 
