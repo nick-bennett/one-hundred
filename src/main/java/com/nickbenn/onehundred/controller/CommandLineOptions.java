@@ -67,12 +67,18 @@ public class CommandLineOptions {
 
   /**
    * Parses the specified {@link String String[]} (presumably containing the command-line arguments
-   * passed to the applications entry-point {@code main} method.
+   * passed to the applications entry-point {@code main} method. If a given option is not present in
+   * {@code args}, the relevant default value (specified as a constant in the {@link Game} class)
+   * will be used.
    *
    * @param args Command-line arguments.
-   * @throws ParseException
-   * @throws StrategyInitializationException
-   * @throws IllegalArgumentException
+   * @throws ParseException                  If the command-line arguments are not recognized as
+   *                                         specifying the options defined here.
+   * @throws StrategyInitializationException If the specified (or default) {@link Strategy} cannot
+   *                                         be instantiated.
+   * @throws IllegalArgumentException        If any of the option values cannot be parsed from the
+   *                                         {@link String} representation used in the command line
+   *                                         to the appropriate type.
    */
   public void parse(String[] args)
       throws ParseException, StrategyInitializationException, IllegalArgumentException {
@@ -88,32 +94,73 @@ public class CommandLineOptions {
         : Game.DEFAULT_OPERATION;
     strategy = Strategy.newInstance(
         commandLine.hasOption(STRATEGY_SHORT_OPTION)
-        ? commandLine.getOptionValue(STRATEGY_SHORT_OPTION).toLowerCase()
-        : ConsoleSolitaireReferee.DEFAULT_STRATEGY_KEY
+            ? commandLine.getOptionValue(STRATEGY_SHORT_OPTION).toLowerCase()
+            : ConsoleSolitaireReferee.DEFAULT_STRATEGY_KEY
     );
     helpRequested = commandLine.hasOption(HELP_SHORT_OPTION);
   }
 
+  /**
+   * Displays the usage syntax and list of available options, with short descriptions of (and
+   * default values for) each.
+   */
   public void showHelp() {
     new HelpFormatter().printHelp(syntax, header, options, footer);
   }
 
+  /**
+   * Returns the target value (for the addition game) or the starting value (for the subtraction
+   * game). This value is taken either from the {@code args} passed to the {@link #parse(String[])}
+   * method, or from the default value specified in {@link Game#DEFAULT_UPPER_BOUND}.
+   *
+   * @return
+   */
   public int getBound() {
     return bound;
   }
 
+  /**
+   * Returns the maximum value that can be added (for the addition game) or subtracted (for the
+   * subtraction game). This value is taken either from the {@code args} passed to the
+   * {@link #parse(String[])} method, or from the default value specified in
+   * {@link Game#DEFAULT_MAX_MOVE}.
+   *
+   * @return
+   */
   public int getMaxMove() {
     return maxMove;
   }
 
+  /**
+   * Returns the game operation or direction (i.e. addition or subtraction) as an instance of the
+   * {@link Operation} {@code enum}. This value is taken either from the {@code args} passed to the
+   * {@link #parse(String[])} method, or from the default value specified in
+   * {@link Game#DEFAULT_OPERATION}.
+   *
+   * @return
+   */
   public Operation getOperation() {
     return operation;
   }
 
+  /**
+   * Returns a key identifying the playing {@link Strategy} used by the computer. This value is
+   * taken either from the {@code args} passed to the {@link #parse(String[])} method, or from the
+   * default value specified in {@link ConsoleSolitaireReferee#DEFAULT_STRATEGY_KEY}.
+   *
+   * @return
+   */
   public Strategy getStrategy() throws StrategyInitializationException {
     return strategy;
   }
 
+  /**
+   * Indicates that the {@code --help} or {@code -?} option was passed to {@link #parse(String[])}
+   * in {@code args}. This flag is used to display a usage information/help screen <i>instead of</i>
+   * starting a game.
+   *
+   * @return
+   */
   public boolean isHelpRequested() {
     return helpRequested;
   }
