@@ -1,3 +1,6 @@
+/*
+ * Copyright 2022 Nicholas Bennett. See LICENSE for software license terms.
+ */
 package com.nickbenn.onehundred.model.exception;
 
 /**

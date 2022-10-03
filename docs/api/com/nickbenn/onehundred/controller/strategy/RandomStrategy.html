@@ -87,7 +87,7 @@ loadScripts(document, 'script');</script>
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
@@ -122,27 +122,52 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
+<li><a href="Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">com.nickbenn.onehundred.controller.strategy.Strategy</a></li>
+<li>
+<ul class="inheritance">
 <li>com.nickbenn.onehundred.controller.strategy.RandomStrategy</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
-<dl>
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="Strategy.html" title="interface in com.nickbenn.onehundred.controller.strategy">Strategy</a></code></dd>
-</dl>
 <hr>
 <pre>public class <span class="typeNameLabel">RandomStrategy</span>
-extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
-implements <a href="Strategy.html" title="interface in com.nickbenn.onehundred.controller.strategy">Strategy</a></pre>
+extends <a href="Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></pre>
+<div class="block">Implements a random strategy for the normal (non-mis&#x00e8;re) form of the One Hundred game.
+ This strategy selects move as follows:
+ <ul>
+   <li><p>If an available move results in an immediate win, this move will be selected.</p></li>
+   <li><p>If no available move results in an immediate win, one of the available moves will be
+   selected at random, with all such moves equally likely to be selected (assuming that the source
+   of randomness is unbiased).</p></li>
+ </ul></div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a id="nested.classes.inherited.from.class.com.nickbenn.onehundred.controller.strategy.Strategy">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;com.nickbenn.onehundred.controller.strategy.<a href="Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></h3>
+<code><a href="Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></code></li>
+</ul>
+</li>
+</ul>
+</section>
 <!-- =========== FIELD SUMMARY =========== -->
 <section role="region">
 <ul class="blockList">
@@ -154,8 +179,8 @@ implements <a href="Strategy.html" title="interface in com.nickbenn.onehundred.c
 <li class="blockList"><a id="fields.inherited.from.class.com.nickbenn.onehundred.controller.strategy.Strategy">
 <!--   -->
 </a>
-<h3>Fields inherited from interface&nbsp;com.nickbenn.onehundred.controller.strategy.<a href="Strategy.html" title="interface in com.nickbenn.onehundred.controller.strategy">Strategy</a></h3>
-<code><a href="Strategy.html#EXCEPTION_MESSAGE_FORMAT">EXCEPTION_MESSAGE_FORMAT</a>, <a href="Strategy.html#PROPERTIES_FILENAME">PROPERTIES_FILENAME</a></code></li>
+<h3>Fields inherited from class&nbsp;com.nickbenn.onehundred.controller.strategy.<a href="Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></h3>
+<code><a href="Strategy.html#PROPERTIES_FILENAME">PROPERTIES_FILENAME</a></code></li>
 </ul>
 </li>
 </ul>
@@ -174,12 +199,10 @@ implements <a href="Strategy.html" title="interface in com.nickbenn.onehundred.c
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">RandomStrategy</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.util.Random)">RandomStrategy</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html?is-external=true" title="class or interface in java.util" class="externalLink">Random</a>&nbsp;rng)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Initializes this strategy with the specified source of randomness.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -206,6 +229,13 @@ implements <a href="Strategy.html" title="interface in com.nickbenn.onehundred.c
 </tr>
 </table>
 <ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.com.nickbenn.onehundred.controller.strategy.Strategy">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;com.nickbenn.onehundred.controller.strategy.<a href="Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></h3>
+<code><a href="Strategy.html#getRng()">getRng</a>, <a href="Strategy.html#newInstance(java.lang.String)">newInstance</a>, <a href="Strategy.html#newInstance(java.lang.String,java.util.Random)">newInstance</a></code></li>
+</ul>
+<ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
@@ -228,15 +258,6 @@ implements <a href="Strategy.html" title="interface in com.nickbenn.onehundred.c
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>RandomStrategy</h4>
-<pre>public&nbsp;RandomStrategy()</pre>
-</li>
-</ul>
 <a id="&lt;init&gt;(java.util.Random)">
 <!--   -->
 </a>
@@ -244,9 +265,10 @@ implements <a href="Strategy.html" title="interface in com.nickbenn.onehundred.c
 <li class="blockList">
 <h4>RandomStrategy</h4>
 <pre>public&nbsp;RandomStrategy&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html?is-external=true" title="class or interface in java.util" class="externalLink">Random</a>&nbsp;rng)</pre>
+<div class="block">Initializes this strategy with the specified source of randomness.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>rng</code> - </dd>
+<dd><code>rng</code> - Source of randomness for random moves.</dd>
 </dl>
 </li>
 </ul>
@@ -269,9 +291,7 @@ implements <a href="Strategy.html" title="interface in com.nickbenn.onehundred.c
 <pre class="methodSignature">public&nbsp;int&nbsp;getNextMove&#8203;(<a href="../../model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a>&nbsp;game)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Strategy.html#getNextMove(com.nickbenn.onehundred.model.Game)">getNextMove</a></code>&nbsp;in interface&nbsp;<code><a href="Strategy.html" title="interface in com.nickbenn.onehundred.controller.strategy">Strategy</a></code></dd>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>game</code> - </dd>
+<dd><code><a href="Strategy.html#getNextMove(com.nickbenn.onehundred.model.Game)">getNextMove</a></code>&nbsp;in class&nbsp;<code><a href="Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 </dl>
 </li>
@@ -327,7 +347,7 @@ implements <a href="Strategy.html" title="interface in com.nickbenn.onehundred.c
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>

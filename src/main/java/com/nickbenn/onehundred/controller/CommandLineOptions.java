@@ -1,3 +1,6 @@
+/*
+ * Copyright 2022 Nicholas Bennett. See LICENSE for software license terms.
+ */
 package com.nickbenn.onehundred.controller;
 
 import com.nickbenn.onehundred.controller.strategy.Strategy;
@@ -27,7 +30,7 @@ public class CommandLineOptions {
   private static final String OPERATION_LONG_OPTION = "operation";
   private static final String STRATEGY_SHORT_OPTION = "s";
   private static final String STRATEGY_LONG_OPTION = "strategy";
-  private static final String HELP_SHORT_OPTION = "h";
+  private static final String HELP_SHORT_OPTION = "?";
   private static final String HELP_LONG_OPTION = "help";
 
   private final Options options;

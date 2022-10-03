@@ -136,6 +136,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public abstract class <span class="typeNameLabel">Session</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
+<div class="block">Generalizes launch of user interaction session and access to command-line arguments. Concrete
+ subclasses must implement <a href="#run()"><code>run()</code></a> for management of user interaction (through completion).
+ Subclasses</div>
 </li>
 </ul>
 </div>
@@ -159,7 +162,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr class="altColor">
 <td class="colFirst"><code>protected </code></td>
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String%5B%5D)">Session</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Stores a safe copy of the <code>args</code> array for access via the <a href="#getArgs()"><code>getArgs()</code></a> method.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -220,6 +225,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>Session</h4>
 <pre>protected&nbsp;Session&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args)</pre>
+<div class="block">Stores a safe copy of the <code>args</code> array for access via the <a href="#getArgs()"><code>getArgs()</code></a> method.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>args</code> - Command-line arguments.</dd>
+</dl>
 </li>
 </ul>
 </li>
