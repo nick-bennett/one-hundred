@@ -135,8 +135,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><a href="com/nickbenn/onehundred/controller/strategy/package-summary.html">com.nickbenn.onehundred.controller.strategy</a> - package com.nickbenn.onehundred.controller.strategy</dt>
 <dd>
-<div class="block"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>Throwable</code></a> subclasses encapsulating errors that may occur during parsing and
- handling of configuration options specified during application startup.</div>
+<div class="block">Abstract and concrete classes declaring and implementing computer strategies for playing the
+ game.</div>
 </dd>
 <dt><a href="com/nickbenn/onehundred/model/package-summary.html">com.nickbenn.onehundred.model</a> - package com.nickbenn.onehundred.model</dt>
 <dd>
@@ -154,9 +154,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  representations of the system state and key transitions.</div>
 </dd>
 <dt><a href="com/nickbenn/onehundred/controller/CommandLineOptions.html" title="class in com.nickbenn.onehundred.controller"><span class="typeNameLink">CommandLineOptions</span></a> - Class in <a href="com/nickbenn/onehundred/controller/package-summary.html">com.nickbenn.onehundred.controller</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Defines several position-independent command-line options, along with the
+ <a href="com/nickbenn/onehundred/controller/CommandLineOptions.html#parse(java.lang.String%5B%5D)"><code>CommandLineOptions.parse(String[])</code></a> method for populating corresponding fields from the command line at
+ runtime, and accessor methods to interrogate the resulting option values.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/CommandLineOptions.html#%3Cinit%3E()">CommandLineOptions()</a></span> - Constructor for class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/CommandLineOptions.html" title="class in com.nickbenn.onehundred.controller">CommandLineOptions</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Initialize this instance by defining the various options to be recognized by
+ <a href="com/nickbenn/onehundred/controller/CommandLineOptions.html#parse(java.lang.String%5B%5D)"><code>CommandLineOptions.parse(String[])</code></a>.</div>
+</dd>
 <dt><a href="com/nickbenn/onehundred/ConsoleMain.html" title="class in com.nickbenn.onehundred"><span class="typeNameLink">ConsoleMain</span></a> - Class in <a href="com/nickbenn/onehundred/package-summary.html">com.nickbenn.onehundred</a></dt>
 <dd>
 <div class="block">Implements entry point for console-mode implementation of <strong>"One Hundred"</strong>, a
@@ -238,7 +245,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/RandomStrategy.html#getNextMove(com.nickbenn.onehundred.model.Game)">getNextMove(Game)</a></span> - Method in class com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/RandomStrategy.html" title="class in com.nickbenn.onehundred.controller.strategy">RandomStrategy</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#getNextMove(com.nickbenn.onehundred.model.Game)">getNextMove(Game)</a></span> - Method in class com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Computes and returns the next move, according to this strategy.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/CommandLineOptions.html#getOperation()">getOperation()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/CommandLineOptions.html" title="class in com.nickbenn.onehundred.controller">CommandLineOptions</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/model/Game.html#getOperation()">getOperation()</a></span> - Method in class com.nickbenn.onehundred.model.<a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a></dt>
@@ -248,7 +257,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/model/Game.html#getRemaining()">getRemaining()</a></span> - Method in class com.nickbenn.onehundred.model.<a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#getRng()">getRng()</a></span> - Method in class com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the source of randomness, for use by a concrete subclass.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/model/Game.Operation.html#getSign()">getSign()</a></span> - Method in enum com.nickbenn.onehundred.model.<a href="com/nickbenn/onehundred/model/Game.Operation.html" title="enum in com.nickbenn.onehundred.model">Game.Operation</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/model/Game.html#getState()">getState()</a></span> - Method in class com.nickbenn.onehundred.model.<a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a></dt>
@@ -340,11 +351,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#newInstance(java.lang.String)">newInstance(String)</a></span> - Static method in class com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></dt>
 <dd>
 <div class="block">Creates, initializes (with a default source of randomness), and returns an instance of the
- concrete subclass specified by the property value (found in <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#PROPERTIES_FILENAME"><code>Strategy.PROPERTIES_FILENAME</code></a>
+ concrete subclass specified by the property value (found in <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#PROPERTIES_FILENAME"><code>Strategy.PROPERTIES_FILENAME</code></a>)
  corresponding to <code>key</code>.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#newInstance(java.lang.String,java.util.Random)">newInstance(String, Random)</a></span> - Static method in class com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Creates, initializes, and returns an instance of the concrete subclass specified by the
+ property value (found in <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#PROPERTIES_FILENAME"><code>Strategy.PROPERTIES_FILENAME</code></a>) corresponding to <code>key</code>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/view/Keys.html#NEXT_MOVE">NEXT_MOVE</a></span> - Static variable in class com.nickbenn.onehundred.view.<a href="com/nickbenn/onehundred/view/Keys.html" title="class in com.nickbenn.onehundred.view">Keys</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/view/GamePresentation.html#nextMoveNotice(java.lang.String)">nextMoveNotice(String)</a></span> - Method in interface com.nickbenn.onehundred.view.<a href="com/nickbenn/onehundred/view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a></dt>
@@ -376,7 +390,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <h2 class="title">P</h2>
 <dl>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/CommandLineOptions.html#parse(java.lang.String%5B%5D)">parse(String[])</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/CommandLineOptions.html" title="class in com.nickbenn.onehundred.controller">CommandLineOptions</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Parses the specified <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String[]</code></a> (presumably containing the command-line arguments
+ passed to the applications entry-point <code>main</code> method.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.html#play()">play()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/model/Game.html#play(int)">play(int)</a></span> - Method in class com.nickbenn.onehundred.model.<a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a></dt>
@@ -475,21 +492,25 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><span class="typeNameLink">Strategy</span></a> - Class in <a href="com/nickbenn/onehundred/controller/strategy/package-summary.html">com.nickbenn.onehundred.controller.strategy</a></dt>
 <dd>
-<div class="block">Declares methods that must be implemented in a compl</div>
+<div class="block">Declares the <code>abstract</code> method <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#getNextMove(com.nickbenn.onehundred.model.Game)"><code>Strategy.getNextMove(Game)</code></a> (which must be implemented in a
+ concrete subclass), as well as the concrete method <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#getRng()"><code>Strategy.getRng()</code></a> (providing a source of
+ randomness to a concrete implementation), along with the overloaded <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#newInstance(java.lang.String)"><code>Strategy.newInstance(String)</code></a>
+ and <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#newInstance(java.lang.String,java.util.Random)"><code>Strategy.newInstance(String, Random)</code></a> <code>static</code> factory methods.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#%3Cinit%3E(java.util.Random)">Strategy(Random)</a></span> - Constructor for class com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></dt>
 <dd>
 <div class="block">Initializes the basic state of the strategy with the specified source of randomness.</div>
 </dd>
 <dt><a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy"><span class="typeNameLink">Strategy.StrategyInitializationException</span></a> - Exception in <a href="com/nickbenn/onehundred/controller/strategy/package-summary.html">com.nickbenn.onehundred.controller.strategy</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Encapsulates a checked exception, thrown when instantiation of a concrete subclass of
+ <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><code>Strategy</code></a> fails, <em>for any reason</em>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html#%3Cinit%3E()">StrategyInitializationException()</a></span> - Constructor for exception com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html#%3Cinit%3E(java.lang.String)">StrategyInitializationException(String)</a></span> - Constructor for exception com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)">StrategyInitializationException(String, Throwable)</a></span> - Constructor for exception com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable,boolean,boolean)">StrategyInitializationException(String, Throwable, boolean, boolean)</a></span> - Constructor for exception com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html#%3Cinit%3E(java.lang.Throwable)">StrategyInitializationException(Throwable)</a></span> - Constructor for exception com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></dt>
 <dd>&nbsp;</dd>

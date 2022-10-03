@@ -12,7 +12,10 @@ import java.util.Properties;
 import java.util.Random;
 
 /**
- * Declares methods that must be implemented in a compl
+ * Declares the {@code abstract} method {@link #getNextMove(Game)} (which must be implemented in a
+ * concrete subclass), as well as the concrete method {@link #getRng()} (providing a source of
+ * randomness to a concrete implementation), along with the overloaded {@link #newInstance(String)}
+ * and {@link #newInstance(String, Random)} {@code static} factory methods.
  */
 public abstract class Strategy {
 
@@ -36,8 +39,10 @@ public abstract class Strategy {
 
   /**
    * Creates, initializes (with a default source of randomness), and returns an instance of the
-   * concrete subclass specified by the property value (found in {@link #PROPERTIES_FILENAME}
+   * concrete subclass specified by the property value (found in {@link #PROPERTIES_FILENAME})
    * corresponding to {@code key}.
+   * <p>Invoking {@code Strategy.newInstance(key)} equivalent to invoking
+   * {@link #newInstance(String, Random) Strategy.newInstance(key, new Random())}.</p>
    *
    * @param key Lookup key for fully-qualified name of concrete subclass of {@code Strategy}.
    * @return Instance of {@code Strategy} subclass.
@@ -49,10 +54,14 @@ public abstract class Strategy {
   }
 
   /**
-   * @param key
-   * @param rng
-   * @return
-   * @throws StrategyInitializationException
+   * Creates, initializes, and returns an instance of the concrete subclass specified by the
+   * property value (found in {@link #PROPERTIES_FILENAME}) corresponding to {@code key}.
+   *
+   * @param key Property key used to look up (in {@link #PROPERTIES_FILENAME}) fully qualified
+   *            class name of the concrete subclass of this class.
+   * @param rng Source of randomness
+   * @return Instance of specified concrete subclass of this class.
+   * @throws StrategyInitializationException If {@code key} does not exist, the corresponding class does not exist or can't be instantiated.
    */
   public static Strategy newInstance(String key, Random rng)
       throws StrategyInitializationException {
@@ -77,60 +86,42 @@ public abstract class Strategy {
   }
 
   /**
-   * @param game
-   * @return
+   * Computes and returns the next move, according to this strategy.
+   *
+   * @param game Context of the strategy.
+   * @return {@code int} size of the move.
    */
   public abstract int getNextMove(Game game);
 
   /**
-   * @return
+   * Returns the source of randomness, for use by a concrete subclass.
+   *
+   * @return Source of randomness.
    */
   protected Random getRng() {
     return rng;
   }
 
   /**
-   *
+   * Encapsulates a checked exception, thrown when instantiation of a concrete subclass of
+   * {@link Strategy} fails, <em>for any reason</em>.
    */
+  @SuppressWarnings("unused")
   public static class StrategyInitializationException extends Exception {
 
-    /**
-     *
-     */
     public StrategyInitializationException() {
     }
 
-    /**
-     * @param message
-     */
     public StrategyInitializationException(String message) {
       super(message);
     }
 
-    /**
-     * @param cause
-     */
     public StrategyInitializationException(Throwable cause) {
       super(cause);
     }
 
-    /**
-     * @param message
-     * @param cause
-     */
     public StrategyInitializationException(String message, Throwable cause) {
       super(message, cause);
-    }
-
-    /**
-     * @param message
-     * @param cause
-     * @param enableSuppression
-     * @param writableStackTrace
-     */
-    public StrategyInitializationException(String message, Throwable cause,
-        boolean enableSuppression, boolean writableStackTrace) {
-      super(message, cause, enableSuppression, writableStackTrace);
     }
 
   }

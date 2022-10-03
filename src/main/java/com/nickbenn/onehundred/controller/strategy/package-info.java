@@ -3,9 +3,7 @@
  */
 
 /**
- * {@link java.lang.Throwable} subclasses encapsulating errors that may occur during parsing and
- * handling of configuration options specified during application startup. (During a game, any
- * exceptions will typically be raised by methods of the {@link com.nickbenn.onehundred.model model}
- * classes and interfaces.)
+ * Abstract and concrete classes declaring and implementing computer strategies for playing the
+ * game.
  */
 package com.nickbenn.onehundred.controller.strategy;

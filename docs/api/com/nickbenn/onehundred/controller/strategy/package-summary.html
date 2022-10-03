@@ -98,10 +98,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <section role="region"><a id="package.description">
 <!--   -->
 </a>
-<div class="block"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>Throwable</code></a> subclasses encapsulating errors that may occur during parsing and
- handling of configuration options specified during application startup. (During a game, any
- exceptions will typically be raised by methods of the <a href="../../model/package-summary.html"><code>model</code></a>
- classes and interfaces.)</div>
+<div class="block">Abstract and concrete classes declaring and implementing computer strategies for playing the
+ game.</div>
 </section>
 <ul class="blockList">
 <li class="blockList">
@@ -127,7 +125,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr class="altColor">
 <th class="colFirst" scope="row"><a href="Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></th>
 <td class="colLast">
-<div class="block">Declares methods that must be implemented in a compl</div>
+<div class="block">Declares the <code>abstract</code> method <a href="Strategy.html#getNextMove(com.nickbenn.onehundred.model.Game)"><code>Strategy.getNextMove(Game)</code></a> (which must be implemented in a
+ concrete subclass), as well as the concrete method <a href="Strategy.html#getRng()"><code>Strategy.getRng()</code></a> (providing a source of
+ randomness to a concrete implementation), along with the overloaded <a href="Strategy.html#newInstance(java.lang.String)"><code>Strategy.newInstance(String)</code></a>
+ and <a href="Strategy.html#newInstance(java.lang.String,java.util.Random)"><code>Strategy.newInstance(String, Random)</code></a> <code>static</code> factory methods.</div>
 </td>
 </tr>
 </tbody>
@@ -143,7 +144,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tbody>
 <tr class="altColor">
 <th class="colFirst" scope="row"><a href="Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Encapsulates a checked exception, thrown when instantiation of a concrete subclass of
+ <a href="Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><code>Strategy</code></a> fails, <em>for any reason</em>.</div>
+</td>
 </tr>
 </tbody>
 </table>

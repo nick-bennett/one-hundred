@@ -16,7 +16,11 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
 /**
- *
+ * Defines several position-independent command-line options, along with the
+ * {@link #parse(String[])} method for populating corresponding fields from the command line at
+ * runtime, and accessor methods to interrogate the resulting option values. The options defined
+ * include one ({@code --help} or {@code -?}) which is used to display a usage information/help
+ * screen.
  */
 public class CommandLineOptions {
 
@@ -44,6 +48,10 @@ public class CommandLineOptions {
   private Strategy strategy;
   private boolean helpRequested;
 
+  /**
+   * Initialize this instance by defining the various options to be recognized by
+   * {@link #parse(String[])}.
+   */
   public CommandLineOptions() {
     ResourceBundle bundle = ResourceBundle.getBundle(OPTIONS_BUNDLE_NAME);
     options = new Options();
@@ -57,6 +65,15 @@ public class CommandLineOptions {
     footer = bundle.getString(Keys.FOOTER);
   }
 
+  /**
+   * Parses the specified {@link String String[]} (presumably containing the command-line arguments
+   * passed to the applications entry-point {@code main} method.
+   *
+   * @param args Command-line arguments.
+   * @throws ParseException
+   * @throws StrategyInitializationException
+   * @throws IllegalArgumentException
+   */
   public void parse(String[] args)
       throws ParseException, StrategyInitializationException, IllegalArgumentException {
     CommandLine commandLine = new DefaultParser().parse(options, args);

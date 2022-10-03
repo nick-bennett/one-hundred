@@ -111,7 +111,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/controller/CommandLineOptions.html" title="class in com.nickbenn.onehundred.controller">CommandLineOptions</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Defines several position-independent command-line options, along with the
+ <a href="com/nickbenn/onehundred/controller/CommandLineOptions.html#parse(java.lang.String%5B%5D)"><code>CommandLineOptions.parse(String[])</code></a> method for populating corresponding fields from the command line at
+ runtime, and accessor methods to interrogate the resulting option values.</div>
+</th>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/ConsoleMain.html" title="class in com.nickbenn.onehundred">ConsoleMain</a></td>
@@ -196,12 +200,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr id="i18" class="altColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></td>
 <th class="colLast" scope="row">
-<div class="block">Declares methods that must be implemented in a compl</div>
+<div class="block">Declares the <code>abstract</code> method <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#getNextMove(com.nickbenn.onehundred.model.Game)"><code>Strategy.getNextMove(Game)</code></a> (which must be implemented in a
+ concrete subclass), as well as the concrete method <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#getRng()"><code>Strategy.getRng()</code></a> (providing a source of
+ randomness to a concrete implementation), along with the overloaded <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#newInstance(java.lang.String)"><code>Strategy.newInstance(String)</code></a>
+ and <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#newInstance(java.lang.String,java.util.Random)"><code>Strategy.newInstance(String, Random)</code></a> <code>static</code> factory methods.</div>
 </th>
 </tr>
 <tr id="i19" class="rowColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Encapsulates a checked exception, thrown when instantiation of a concrete subclass of
+ <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><code>Strategy</code></a> fails, <em>for any reason</em>.</div>
+</th>
 </tr>
 <tr id="i20" class="altColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/view/TextGamePresentation.html" title="class in com.nickbenn.onehundred.view">TextGamePresentation</a></td>

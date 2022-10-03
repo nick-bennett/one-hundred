@@ -132,6 +132,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">CommandLineOptions</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
+<div class="block">Defines several position-independent command-line options, along with the
+ <a href="#parse(java.lang.String%5B%5D)"><code>parse(String[])</code></a> method for populating corresponding fields from the command line at
+ runtime, and accessor methods to interrogate the resulting option values. The options defined
+ include one (<code>--help</code> or <code>-?</code>) which is used to display a usage information/help
+ screen.</div>
 </li>
 </ul>
 </div>
@@ -153,7 +158,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">CommandLineOptions</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Initialize this instance by defining the various options to be recognized by
+ <a href="#parse(java.lang.String%5B%5D)"><code>parse(String[])</code></a>.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -201,7 +209,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#parse(java.lang.String%5B%5D)">parse</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Parses the specified <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String[]</code></a> (presumably containing the command-line arguments
+ passed to the applications entry-point <code>main</code> method.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -239,6 +250,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>CommandLineOptions</h4>
 <pre>public&nbsp;CommandLineOptions()</pre>
+<div class="block">Initialize this instance by defining the various options to be recognized by
+ <a href="#parse(java.lang.String%5B%5D)"><code>parse(String[])</code></a>.</div>
 </li>
 </ul>
 </li>
@@ -261,7 +274,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
            throws org.apache.commons.cli.ParseException,
                   <a href="strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a>,
                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></pre>
+<div class="block">Parses the specified <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String[]</code></a> (presumably containing the command-line arguments
+ passed to the applications entry-point <code>main</code> method.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>args</code> - Command-line arguments.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>org.apache.commons.cli.ParseException</code></dd>
 <dd><code><a href="strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></code></dd>
