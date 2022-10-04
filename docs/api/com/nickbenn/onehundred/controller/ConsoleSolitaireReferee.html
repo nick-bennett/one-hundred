@@ -138,11 +138,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public final class <span class="typeNameLabel">ConsoleSolitaireReferee</span>
 extends <a href="Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></pre>
 <div class="block">Manages user interaction&mdash;with corresponding updates to the game state&mdash;through
- completion of a single solitaire (player vs&#x2D; computer) game. As the game progresses, an
+ completion of a single solitaire (user against computer) game. As the game progresses, an
  instance of <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation</code></a> is used to construct the text content displayed to the user,
- and user input is read from <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html?is-external=true#in" title="class or interface in java.lang" class="externalLink"><code>System.in</code></a>; all of this is orchestrated in a simple invocation
- of <a href="Referee.html#play()"><code>Referee.play()</code></a>. The actions of the computer opponent are provided by an instance of
- <a href="strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><code>Strategy</code></a>.</div>
+ and user input is read from the console (or some other <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html?is-external=true" title="class or interface in java.io" class="externalLink"><code>InputStream</code></a>); all of this
+ is orchestrated in a simple invocation of <a href="Referee.html#play()"><code>Referee.play()</code></a>. The actions of the computer opponent
+ are provided by an instance of <a href="strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><code>Strategy</code></a>.</div>
 </li>
 </ul>
 </div>
@@ -212,28 +212,42 @@ extends <a href="Referee.html" title="class in com.nickbenn.onehundred.controlle
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMove()">getMove</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Obtains the move from the current player (which may be the computer).</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#presentCompletedMove(com.nickbenn.onehundred.model.Game.State,int)">presentCompletedMove</a></span>&#8203;(<a href="../model/Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a>&nbsp;state,
                     int&nbsp;move)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Presents the most recently completed move, incorporating content provided by the encapsulated
+ <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a>.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#presentError(java.lang.Object)">presentError</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;presentation)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Presents an error related to the most recently <i>attempted</i> move, incorporating content
+ provided by the encapsulated <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a>.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#presentNextMove()">presentNextMove</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Presents preparatory information for the next move, incorporating content provided by the
+ encapsulated <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a>.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#presentState()">presentState</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Presents the current state of the game, incorporating content provided by the encapsulated
+ <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a>.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -296,6 +310,12 @@ extends <a href="Referee.html" title="class in com.nickbenn.onehundred.controlle
 <li class="blockList">
 <h4>presentState</h4>
 <pre class="methodSignature">protected&nbsp;void&nbsp;presentState()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="Referee.html#presentState()">Referee</a></code></span></div>
+<div class="block">Presents the current state of the game, incorporating content provided by the encapsulated
+ <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a>. A concrete subclass must implement this
+ method appropriately for the user interaction mode employed by that subclass, with view objects
+ of subtypes of that specified in the <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a> type
+ parameter.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Referee.html#presentState()">presentState</a></code>&nbsp;in class&nbsp;<code><a href="Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></code></dd>
@@ -309,6 +329,12 @@ extends <a href="Referee.html" title="class in com.nickbenn.onehundred.controlle
 <li class="blockList">
 <h4>presentNextMove</h4>
 <pre class="methodSignature">protected&nbsp;void&nbsp;presentNextMove()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="Referee.html#presentNextMove()">Referee</a></code></span></div>
+<div class="block">Presents preparatory information for the next move, incorporating content provided by the
+ encapsulated <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a>. A concrete subclass must
+ implement this method appropriately for the user interaction mode employed by that subclass,
+ with view objects of subtypes of that specified in the
+ <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a> type parameter.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Referee.html#presentNextMove()">presentNextMove</a></code>&nbsp;in class&nbsp;<code><a href="Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></code></dd>
@@ -322,6 +348,11 @@ extends <a href="Referee.html" title="class in com.nickbenn.onehundred.controlle
 <li class="blockList">
 <h4>getMove</h4>
 <pre class="methodSignature">protected&nbsp;int&nbsp;getMove()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="Referee.html#getMove()">Referee</a></code></span></div>
+<div class="block">Obtains the move from the current player (which may be the computer). A concrete subclass must
+ implement this method appropriately for the user interaction mode employed by that subclass,
+ with view objects of subtypes of that specified in the
+ <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a> type parameter.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Referee.html#getMove()">getMove</a></code>&nbsp;in class&nbsp;<code><a href="Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></code></dd>
@@ -337,9 +368,18 @@ extends <a href="Referee.html" title="class in com.nickbenn.onehundred.controlle
 <h4>presentCompletedMove</h4>
 <pre class="methodSignature">protected&nbsp;void&nbsp;presentCompletedMove&#8203;(<a href="../model/Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a>&nbsp;state,
                                     int&nbsp;move)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="Referee.html#presentCompletedMove(com.nickbenn.onehundred.model.Game.State,int)">Referee</a></code></span></div>
+<div class="block">Presents the most recently completed move, incorporating content provided by the encapsulated
+ <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a>. A concrete subclass must implement this
+ method appropriately for the user interaction mode employed by that subclass, with view objects
+ of subtypes of that specified in the <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a> type
+ parameter.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Referee.html#presentCompletedMove(com.nickbenn.onehundred.model.Game.State,int)">presentCompletedMove</a></code>&nbsp;in class&nbsp;<code><a href="Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>state</code> - <a href="../model/Game.State.html" title="enum in com.nickbenn.onehundred.model"><code>Game.State</code></a> resulting from the completed move.</dd>
+<dd><code>move</code> - Most recent addition (or subtraction).</dd>
 </dl>
 </li>
 </ul>
@@ -350,9 +390,18 @@ extends <a href="Referee.html" title="class in com.nickbenn.onehundred.controlle
 <li class="blockList">
 <h4>presentError</h4>
 <pre class="methodSignature">protected&nbsp;void&nbsp;presentError&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;presentation)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="Referee.html#presentError(java.lang.Object)">Referee</a></code></span></div>
+<div class="block">Presents an error related to the most recently <i>attempted</i> move, incorporating content
+ provided by the encapsulated <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a>. A concrete
+ subclass must implement this method appropriately for the user interaction mode employed by
+ that subclass, with view objects of subtypes of that specified in the
+ <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a> type parameter.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Referee.html#presentError(java.lang.Object)">presentError</a></code>&nbsp;in class&nbsp;<code><a href="Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>presentation</code> - View object returned from
+ <a href="../view/GamePresentation.html#illegalMoveNotification(com.nickbenn.onehundred.model.Game)"><code>GamePresentation.illegalMoveNotification(Game)</code></a>.</dd>
 </dl>
 </li>
 </ul>

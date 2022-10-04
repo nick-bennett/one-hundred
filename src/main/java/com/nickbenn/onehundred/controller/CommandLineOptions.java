@@ -22,6 +22,7 @@ import org.apache.commons.cli.ParseException;
  * include one ({@code --help} or {@code -?}) which is used to display a usage information/help
  * screen.
  */
+@SuppressWarnings("JavadocDeclaration")
 public class CommandLineOptions {
 
   private static final String OPTIONS_BUNDLE_NAME = "options";

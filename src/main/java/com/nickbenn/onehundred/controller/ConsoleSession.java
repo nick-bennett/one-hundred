@@ -11,6 +11,8 @@ import com.nickbenn.onehundred.view.TextGamePresentation;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.io.PrintWriter;
 import java.util.ResourceBundle;
 import org.apache.commons.cli.ParseException;
 
@@ -22,13 +24,21 @@ public class ConsoleSession extends Session {
   private static final String BUNDLE_NAME = "session";
 
   private final CommandLineOptions options;
-  private final BufferedReader reader;
+  private final BufferedReader input;
+  private final PrintStream output;
   private final ResourceBundle bundle;
 
+  /**
+   * Initializes this instance with the provided {@code args} and connects to the standard input
+   * device for subsequent user interaction.
+   *
+   * @param args Command-line arguments.
+   */
   public ConsoleSession(String[] args) {
     super(args);
     options = new CommandLineOptions();
-    reader = new BufferedReader(new InputStreamReader(System.in));
+    input = new BufferedReader(new InputStreamReader(System.in));
+    output = System.out;
     bundle = ResourceBundle.getBundle(BUNDLE_NAME);
   }
 
@@ -42,7 +52,7 @@ public class ConsoleSession extends Session {
         play();
       }
     } catch (StrategyInitializationException | ParseException | IllegalArgumentException e) {
-      System.out.println(e.getMessage());
+      output.println(e.getMessage());
       options.showHelp();
     } catch (IOException e) {
       throw new RuntimeException(e);
@@ -75,8 +85,8 @@ public class ConsoleSession extends Session {
   }
 
   private boolean keepPlaying(String prompt, String negativeResponse) throws IOException {
-    System.out.print(prompt);
-    String response = reader.readLine().trim().toLowerCase();
+    output.print(prompt);
+    String response = input.readLine().trim().toLowerCase();
     return (!response.startsWith(negativeResponse));
   }
 

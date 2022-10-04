@@ -131,7 +131,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
-<dd><code>B</code> - </dd>
+<dd><code>B</code> - Self-type parameter, specifying (when subclassing) the actual subclass type.</dd>
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
@@ -144,6 +144,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>protected abstract static class <span class="typeNameLabel">Referee.Builder&lt;B extends Referee.Builder&lt;B&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
+<div class="block">Implements (partially) the Builder pattern for constructing instances of <a href="Referee.html" title="class in com.nickbenn.onehundred.controller"><code>Referee</code></a>.
+ A concrete subclass of <a href="Referee.html" title="class in com.nickbenn.onehundred.controller"><code>Referee</code></a> should also contain (as <code>static</code> nested classes) a
+ definition of a concrete subclass of <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.controller"><code>Referee.Builder</code></a>, with the type parameter specifying the
+ same <code>Builder</code> subclass, to facilitate the use of the "simulated self-type" idiom.</div>
 </li>
 </ul>
 </div>
@@ -167,7 +171,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr class="altColor">
 <td class="colFirst"><code>protected </code></td>
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.nickbenn.onehundred.view.GamePresentation)">Builder</a></span>&#8203;(<a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;?&gt;&nbsp;presentation)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Initializes this instance with the specified <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation</code></a>, which will be provided
+ to the <a href="Referee.html" title="class in com.nickbenn.onehundred.controller"><code>Referee</code></a> instance created by this builder.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -200,7 +207,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="Referee.Builder.html" title="type parameter in Referee.Builder">B</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setInitialState(com.nickbenn.onehundred.model.Game.State)">setInitialState</a></span>&#8203;(<a href="../model/Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a>&nbsp;initialState)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Specifies the initial game state.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="Referee.Builder.html" title="type parameter in Referee.Builder">B</a></code></td>
@@ -210,7 +219,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="Referee.Builder.html" title="type parameter in Referee.Builder">B</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOperation(com.nickbenn.onehundred.model.Game.Operation)">setOperation</a></span>&#8203;(<a href="../model/Game.Operation.html" title="enum in com.nickbenn.onehundred.model">Game.Operation</a>&nbsp;operation)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Specifies the <a href="../model/Game.Operation.html" title="enum in com.nickbenn.onehundred.model"><code>Game.Operation</code></a> to be used for the <a href="../model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a> managed by <a href="Referee.html" title="class in com.nickbenn.onehundred.controller"><code>Referee</code></a>
+ created by this builder.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="Referee.Builder.html" title="type parameter in Referee.Builder">B</a></code></td>
@@ -248,9 +260,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>Builder</h4>
 <pre>protected&nbsp;Builder&#8203;(<a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;?&gt;&nbsp;presentation)</pre>
+<div class="block">Initializes this instance with the specified <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation</code></a>, which will be provided
+ to the <a href="Referee.html" title="class in com.nickbenn.onehundred.controller"><code>Referee</code></a> instance created by this builder.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>presentation</code> - </dd>
+<dd><code>presentation</code> - Non-<code>null</code> reference to a
+ <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a> instance.</dd>
 </dl>
 </li>
 </ul>
@@ -271,9 +286,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>setOperation</h4>
 <pre class="methodSignature">public&nbsp;<a href="Referee.Builder.html" title="type parameter in Referee.Builder">B</a>&nbsp;setOperation&#8203;(<a href="../model/Game.Operation.html" title="enum in com.nickbenn.onehundred.model">Game.Operation</a>&nbsp;operation)</pre>
+<div class="block">Specifies the <a href="../model/Game.Operation.html" title="enum in com.nickbenn.onehundred.model"><code>Game.Operation</code></a> to be used for the <a href="../model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a> managed by <a href="Referee.html" title="class in com.nickbenn.onehundred.controller"><code>Referee</code></a>
+ created by this builder. If this method is not invoked, the default is
+ <a href="../model/Game.Operation.html#ADDITION"><code>Game.Operation.ADDITION</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>operation</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>This <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.controller"><code>Referee.Builder</code></a> instance.</dd>
 </dl>
 </li>
 </ul>
@@ -284,10 +304,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>setInitialState</h4>
 <pre class="methodSignature">public&nbsp;<a href="Referee.Builder.html" title="type parameter in Referee.Builder">B</a>&nbsp;setInitialState&#8203;(<a href="../model/Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a>&nbsp;initialState)</pre>
+<div class="block">Specifies the initial game state. <code>initialState</code> must be either
+ <a href="../model/Game.State.html#PLAYER_ONE_MOVE"><code>Game.State.PLAYER_ONE_MOVE</code></a> (the default) or <a href="../model/Game.State.html#PLAYER_TWO_MOVE"><code>Game.State.PLAYER_TWO_MOVE</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>initialState</code> - </dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>This <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.controller"><code>Referee.Builder</code></a> instance.</dd>
 </dl>
 </li>
 </ul>
@@ -302,6 +325,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>target</code> - </dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>This <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.controller"><code>Referee.Builder</code></a> instance.</dd>
 </dl>
 </li>
 </ul>
@@ -316,6 +340,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>maxMove</code> - </dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>This <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.controller"><code>Referee.Builder</code></a> instance.</dd>
 </dl>
 </li>
 </ul>
@@ -328,6 +353,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <pre class="methodSignature">protected abstract&nbsp;<a href="Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a>&nbsp;build()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>Fully initialized <a href="Referee.html" title="class in com.nickbenn.onehundred.controller"><code>Referee</code></a> instance.</dd>
 </dl>
 </li>
 </ul>

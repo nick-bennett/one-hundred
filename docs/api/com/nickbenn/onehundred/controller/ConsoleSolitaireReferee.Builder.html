@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -195,10 +195,15 @@ extends <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.c
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setInputStream(java.io.InputStream)">setInputStream</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">InputStream</a>&nbsp;input)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setInput(java.io.BufferedReader)">setInput</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html?is-external=true" title="class or interface in java.io" class="externalLink">BufferedReader</a>&nbsp;input)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOutput(java.io.PrintStream)">setOutput</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink">PrintStream</a>&nbsp;output)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStrategy(com.nickbenn.onehundred.controller.strategy.Strategy)">setStrategy</a></span>&#8203;(<a href="strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a>&nbsp;strategy)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -241,8 +246,7 @@ extends <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.c
 <li class="blockList">
 <h4>Builder</h4>
 <pre>public&nbsp;Builder&#8203;(<a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;?&gt;&nbsp;presentation,
-               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ResourceBundle.html?is-external=true" title="class or interface in java.util" class="externalLink">ResourceBundle</a>&nbsp;bundle)
-        throws <a href="strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></pre>
+               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ResourceBundle.html?is-external=true" title="class or interface in java.util" class="externalLink">ResourceBundle</a>&nbsp;bundle)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>presentation</code> - </dd>
@@ -262,6 +266,24 @@ extends <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.c
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="setInput(java.io.BufferedReader)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setInput</h4>
+<pre class="methodSignature">public&nbsp;<a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a>&nbsp;setInput&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html?is-external=true" title="class or interface in java.io" class="externalLink">BufferedReader</a>&nbsp;input)</pre>
+</li>
+</ul>
+<a id="setOutput(java.io.PrintStream)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOutput</h4>
+<pre class="methodSignature">public&nbsp;<a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a>&nbsp;setOutput&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink">PrintStream</a>&nbsp;output)</pre>
+</li>
+</ul>
 <a id="setStrategy(com.nickbenn.onehundred.controller.strategy.Strategy)">
 <!--   -->
 </a>
@@ -272,20 +294,6 @@ extends <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.c
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>strategy</code> - </dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-</dl>
-</li>
-</ul>
-<a id="setInputStream(java.io.InputStream)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setInputStream</h4>
-<pre class="methodSignature">public&nbsp;<a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a>&nbsp;setInputStream&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">InputStream</a>&nbsp;input)</pre>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>input</code> - </dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 </dl>
 </li>
@@ -310,11 +318,15 @@ extends <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.c
 <ul class="blockListLast">
 <li class="blockList">
 <h4>build</h4>
-<pre class="methodSignature">public&nbsp;<a href="ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee</a>&nbsp;build()</pre>
+<pre class="methodSignature">public&nbsp;<a href="ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee</a>&nbsp;build()
+                              throws <a href="strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Referee.Builder.html#build()">build</a></code>&nbsp;in class&nbsp;<code><a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.controller">Referee.Builder</a>&lt;<a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a>&gt;</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>Fully initialized <a href="Referee.html" title="class in com.nickbenn.onehundred.controller"><code>Referee</code></a> instance.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></code></dd>
 </dl>
 </li>
 </ul>

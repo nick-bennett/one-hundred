@@ -103,11 +103,11 @@ public abstract class Strategy {
   }
 
   /**
-   * Encapsulates a checked exception, thrown when instantiation of a concrete subclass of
+   * Encapsulates an unchecked exception, thrown when instantiation of a concrete subclass of
    * {@link Strategy} fails, <em>for any reason</em>.
    */
   @SuppressWarnings("unused")
-  public static class StrategyInitializationException extends Exception {
+  public static class StrategyInitializationException extends RuntimeException {
 
     public StrategyInitializationException() {
     }

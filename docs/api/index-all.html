@@ -99,7 +99,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/model/Game.Operation.html#ADDITION">ADDITION</a></span> - com.nickbenn.onehundred.model.<a href="com/nickbenn/onehundred/model/Game.Operation.html" title="enum in com.nickbenn.onehundred.model">Game.Operation</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.html#applyMove(int)">applyMove(int)</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Updates the state of the current <a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a> instance, according to the specified
+ <code>move</code>.</div>
+</dd>
 </dl>
 <a id="I:B">
 <!--   -->
@@ -111,7 +114,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.Builder.html#build()">build()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.Builder.html" title="class in com.nickbenn.onehundred.controller">Referee.Builder</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.Builder.html#%3Cinit%3E(com.nickbenn.onehundred.view.GamePresentation)">Builder(GamePresentation&lt;?&gt;)</a></span> - Constructor for class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.Builder.html" title="class in com.nickbenn.onehundred.controller">Referee.Builder</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Initializes this instance with the specified <a href="com/nickbenn/onehundred/view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation</code></a>, which will be provided
+ to the <a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller"><code>Referee</code></a> instance created by this builder.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.Builder.html#%3Cinit%3E(com.nickbenn.onehundred.view.GamePresentation,java.util.ResourceBundle)">Builder(GamePresentation&lt;?&gt;, ResourceBundle)</a></span> - Constructor for class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a></dt>
 <dd>&nbsp;</dd>
 </dl>
@@ -174,11 +180,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><a href="com/nickbenn/onehundred/controller/ConsoleSession.html" title="class in com.nickbenn.onehundred.controller"><span class="typeNameLink">ConsoleSession</span></a> - Class in <a href="com/nickbenn/onehundred/controller/package-summary.html">com.nickbenn.onehundred.controller</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/ConsoleSession.html#%3Cinit%3E(java.lang.String%5B%5D)">ConsoleSession(String[])</a></span> - Constructor for class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/ConsoleSession.html" title="class in com.nickbenn.onehundred.controller">ConsoleSession</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Initializes this instance with the provided <code>args</code> and connects to the standard input
+ device for subsequent user interaction.</div>
+</dd>
 <dt><a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller"><span class="typeNameLink">ConsoleSolitaireReferee</span></a> - Class in <a href="com/nickbenn/onehundred/controller/package-summary.html">com.nickbenn.onehundred.controller</a></dt>
 <dd>
 <div class="block">Manages user interaction&mdash;with corresponding updates to the game state&mdash;through
- completion of a single solitaire (player vs&#x2D; computer) game.</div>
+ completion of a single solitaire (user against computer) game.</div>
 </dd>
 <dt><a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller"><span class="typeNameLink">ConsoleSolitaireReferee.Builder</span></a> - Class in <a href="com/nickbenn/onehundred/controller/package-summary.html">com.nickbenn.onehundred.controller</a></dt>
 <dd>&nbsp;</dd>
@@ -230,7 +239,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  messages, etc.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Session.html#getArgs()">getArgs()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Session.html" title="class in com.nickbenn.onehundred.controller">Session</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the command-line arguments, as passed to <a href="com/nickbenn/onehundred/controller/Session.html#%3Cinit%3E(java.lang.String%5B%5D)"><code>Session(String[])</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/CommandLineOptions.html#getBound()">getBound()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/CommandLineOptions.html" title="class in com.nickbenn.onehundred.controller">CommandLineOptions</a></dt>
 <dd>
 <div class="block">Returns the target value (for the addition game) or the starting value (for the subtraction
@@ -239,7 +250,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/model/Game.html#getCurrentCount()">getCurrentCount()</a></span> - Method in class com.nickbenn.onehundred.model.<a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.html#getGame()">getGame()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the <a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a> instance representing the game currently being played.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/CommandLineOptions.html#getMaxMove()">getMaxMove()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/CommandLineOptions.html" title="class in com.nickbenn.onehundred.controller">CommandLineOptions</a></dt>
 <dd>
 <div class="block">Returns the maximum value that can be added (for the addition game) or subtracted (for the
@@ -250,7 +263,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.html#getMove()">getMove()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.html#getMove()">getMove()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Obtains the move from the current player (which may be the computer).</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/OptimalStrategy.html#getNextMove(com.nickbenn.onehundred.model.Game)">getNextMove(Game)</a></span> - Method in class com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/OptimalStrategy.html" title="class in com.nickbenn.onehundred.controller.strategy">OptimalStrategy</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/RandomStrategy.html#getNextMove(com.nickbenn.onehundred.model.Game)">getNextMove(Game)</a></span> - Method in class com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/RandomStrategy.html" title="class in com.nickbenn.onehundred.controller.strategy">RandomStrategy</a></dt>
@@ -266,7 +281,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/model/Game.html#getOperation()">getOperation()</a></span> - Method in class com.nickbenn.onehundred.model.<a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.html#getPresentation()">getPresentation()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the <a href="com/nickbenn/onehundred/view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a> instance for use by subclasses.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/model/Game.html#getRemaining()">getRemaining()</a></span> - Method in class com.nickbenn.onehundred.model.<a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#getRng()">getRng()</a></span> - Method in class com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></dt>
@@ -433,7 +450,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  passed to the applications entry-point <code>main</code> method.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.html#play()">play()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Orchestrates the changes of state and user interaction through completion of a single
+ <a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a>, using an instance of <a href="com/nickbenn/onehundred/view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a> provided
+ via <a href="com/nickbenn/onehundred/controller/Referee.Builder.html#%3Cinit%3E(com.nickbenn.onehundred.view.GamePresentation)"><code>Builder(GamePresentation)</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/model/Game.html#play(int)">play(int)</a></span> - Method in class com.nickbenn.onehundred.model.<a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/model/Game.State.html#play(int,int,int,int,com.nickbenn.onehundred.model.Game.Operation)">play(int, int, int, int, Game.Operation)</a></span> - Method in enum com.nickbenn.onehundred.model.<a href="com/nickbenn/onehundred/model/Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a></dt>
@@ -453,19 +474,31 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.html#presentCompletedMove(com.nickbenn.onehundred.model.Game.State,int)">presentCompletedMove(Game.State, int)</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.html#presentCompletedMove(com.nickbenn.onehundred.model.Game.State,int)">presentCompletedMove(Game.State, int)</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Presents the most recently completed move, incorporating content provided by the encapsulated
+ <a href="com/nickbenn/onehundred/view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.html#presentError(java.lang.Object)">presentError(Object)</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.html#presentError(java.lang.Object)">presentError(Object)</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Presents an error related to the most recently <i>attempted</i> move, incorporating content
+ provided by the encapsulated <a href="com/nickbenn/onehundred/view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.html#presentNextMove()">presentNextMove()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.html#presentNextMove()">presentNextMove()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Presents preparatory information for the next move, incorporating content provided by the
+ encapsulated <a href="com/nickbenn/onehundred/view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.html#presentState()">presentState()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.html#presentState()">presentState()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Presents the current state of the game, incorporating content provided by the encapsulated
+ <a href="com/nickbenn/onehundred/view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#PROPERTIES_FILENAME">PROPERTIES_FILENAME</a></span> - Static variable in class com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></dt>
 <dd>
 <div class="block">Contains keys and corresponding fully-qualified names of concrete subclasses of this class.</div>
@@ -485,15 +518,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Initializes this strategy with the specified source of randomness.</div>
 </dd>
 <dt><a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller"><span class="typeNameLink">Referee</span></a> - Class in <a href="com/nickbenn/onehundred/controller/package-summary.html">com.nickbenn.onehundred.controller</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Encapsulates the enforcement of the rules of the game, along with updates to the game state.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.html#%3Cinit%3E(com.nickbenn.onehundred.controller.Referee.Builder)">Referee(Referee.Builder&lt;?&gt;)</a></span> - Constructor for class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Initializes this instance&mdash;specifically, instantiating <a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a> and incorporating the
+ <a href="com/nickbenn/onehundred/view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a> instance passed to
+ <a href="com/nickbenn/onehundred/controller/Referee.Builder.html#%3Cinit%3E(com.nickbenn.onehundred.view.GamePresentation)"><code>Builder(GamePresentation)</code></a>.</div>
+</dd>
 <dt><a href="com/nickbenn/onehundred/controller/Referee.Builder.html" title="class in com.nickbenn.onehundred.controller"><span class="typeNameLink">Referee.Builder</span></a>&lt;<a href="com/nickbenn/onehundred/controller/Referee.Builder.html" title="type parameter in Referee.Builder">B</a> extends <a href="com/nickbenn/onehundred/controller/Referee.Builder.html" title="class in com.nickbenn.onehundred.controller">Referee.Builder</a>&lt;<a href="com/nickbenn/onehundred/controller/Referee.Builder.html" title="type parameter in Referee.Builder">B</a>&gt;&gt; - Class in <a href="com/nickbenn/onehundred/controller/package-summary.html">com.nickbenn.onehundred.controller</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Implements (partially) the Builder pattern for constructing instances of <a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller"><code>Referee</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/ConsoleSession.html#run()">run()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/ConsoleSession.html" title="class in com.nickbenn.onehundred.controller">ConsoleSession</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Session.html#run()">run()</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Session.html" title="class in com.nickbenn.onehundred.controller">Session</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Handles execution of the application, including processing any command-line options previously
+ passed to <a href="com/nickbenn/onehundred/controller/Session.html#%3Cinit%3E(java.lang.String%5B%5D)"><code>Session(String[])</code></a>.</div>
+</dd>
 </dl>
 <a id="I:S">
 <!--   -->
@@ -513,12 +557,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Stores a safe copy of the <code>args</code> array for access via the <a href="com/nickbenn/onehundred/controller/Session.html#getArgs()"><code>Session.getArgs()</code></a> method.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.Builder.html#setInitialState(com.nickbenn.onehundred.model.Game.State)">setInitialState(Game.State)</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.Builder.html" title="class in com.nickbenn.onehundred.controller">Referee.Builder</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.Builder.html#setInputStream(java.io.InputStream)">setInputStream(InputStream)</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a></dt>
+<dd>
+<div class="block">Specifies the initial game state.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.Builder.html#setInput(java.io.BufferedReader)">setInput(BufferedReader)</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.Builder.html#setMaxMove(int)">setMaxMove(int)</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.Builder.html" title="class in com.nickbenn.onehundred.controller">Referee.Builder</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/Referee.Builder.html#setOperation(com.nickbenn.onehundred.model.Game.Operation)">setOperation(Game.Operation)</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/Referee.Builder.html" title="class in com.nickbenn.onehundred.controller">Referee.Builder</a></dt>
+<dd>
+<div class="block">Specifies the <a href="com/nickbenn/onehundred/model/Game.Operation.html" title="enum in com.nickbenn.onehundred.model"><code>Game.Operation</code></a> to be used for the <a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a> managed by <a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller"><code>Referee</code></a>
+ created by this builder.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.Builder.html#setOutput(java.io.PrintStream)">setOutput(PrintStream)</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.Builder.html#setStrategy(com.nickbenn.onehundred.controller.strategy.Strategy)">setStrategy(Strategy)</a></span> - Method in class com.nickbenn.onehundred.controller.<a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a></dt>
 <dd>&nbsp;</dd>
@@ -548,7 +599,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy"><span class="typeNameLink">Strategy.StrategyInitializationException</span></a> - Exception in <a href="com/nickbenn/onehundred/controller/strategy/package-summary.html">com.nickbenn.onehundred.controller.strategy</a></dt>
 <dd>
-<div class="block">Encapsulates a checked exception, thrown when instantiation of a concrete subclass of
+<div class="block">Encapsulates an unchecked exception, thrown when instantiation of a concrete subclass of
  <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><code>Strategy</code></a> fails, <em>for any reason</em>.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html#%3Cinit%3E()">StrategyInitializationException()</a></span> - Constructor for exception com.nickbenn.onehundred.controller.strategy.<a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></dt>

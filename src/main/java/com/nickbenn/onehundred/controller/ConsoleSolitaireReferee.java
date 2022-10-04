@@ -10,37 +10,35 @@ import com.nickbenn.onehundred.view.GamePresentation;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.io.PrintWriter;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 /**
  * Manages user interaction&mdash;with corresponding updates to the game state&mdash;through
- * completion of a single solitaire (player vs&#x2D; computer) game. As the game progresses, an
+ * completion of a single solitaire (user against computer) game. As the game progresses, an
  * instance of {@link GamePresentation} is used to construct the text content displayed to the user,
- * and user input is read from {@link System#in}; all of this is orchestrated in a simple invocation
- * of {@link #play()}. The actions of the computer opponent are provided by an instance of
- * {@link Strategy}.
+ * and user input is read from the console (or some other {@link java.io.InputStream}); all of this
+ * is orchestrated in a simple invocation of {@link #play()}. The actions of the computer opponent
+ * are provided by an instance of {@link Strategy}.
  */
 public final class ConsoleSolitaireReferee extends Referee {
 
   public static final String DEFAULT_STRATEGY_KEY = "optimal";
 
   private final Strategy strategy;
-  private final BufferedReader reader;
+  private final BufferedReader input;
+  private final PrintStream output;
   private final String playerName;
   private final String computerName;
 
-  /**
-   * This is a summary.
-   *
-   * @param builder
-   */
   private ConsoleSolitaireReferee(Builder builder) {
     super(builder);
     strategy = builder.strategy;
-    reader = new BufferedReader(new InputStreamReader(builder.input));
+    input = builder.input;
+    output = builder.output;
     ResourceBundle bundle = builder.bundle;
     playerName = bundle.getString(Keys.PLAYER_NAME);
     computerName = bundle.getString(Keys.COMPUTER_NAME);
@@ -48,12 +46,12 @@ public final class ConsoleSolitaireReferee extends Referee {
 
   @Override
   protected void presentState() {
-    System.out.print(getPresentation().stateRepresentation(getGame(), playerName, computerName));
+    output.print(getPresentation().stateRepresentation(getGame(), playerName, computerName));
   }
 
   @Override
   protected void presentNextMove() {
-    System.out.print(getPresentation().nextMoveNotice(
+    output.print(getPresentation().nextMoveNotice(
         (getGame().getState() == Game.State.PLAYER_ONE_MOVE) ? playerName : computerName));
   }
 
@@ -80,8 +78,8 @@ public final class ConsoleSolitaireReferee extends Referee {
   }
 
   private int getUserMove() throws IOException {
-    System.out.print(getPresentation().movePrompt(getGame()));
-    String input = reader.readLine().trim();
+    output.print(getPresentation().movePrompt(getGame()));
+    String input = this.input.readLine().trim();
     return Integer.parseInt(input);
   }
 
@@ -100,20 +98,28 @@ public final class ConsoleSolitaireReferee extends Referee {
 
     private final ResourceBundle bundle;
 
+    private BufferedReader input;
+    private PrintStream output;
     private Strategy strategy;
-    private InputStream input;
 
     /**
      * @param presentation
      * @param bundle
      * @throws StrategyInitializationException
      */
-    public Builder(GamePresentation<?> presentation, ResourceBundle bundle)
-        throws StrategyInitializationException {
+    public Builder(GamePresentation<?> presentation, ResourceBundle bundle) {
       super(presentation);
       this.bundle = Objects.requireNonNull(bundle, NULL_BUNDLE_MESSAGE);
-      strategy = Strategy.newInstance(DEFAULT_STRATEGY_KEY);
-      input = System.in;
+    }
+
+    public Builder setInput(BufferedReader input) {
+      this.input = Objects.requireNonNull(input);
+      return self();
+    }
+
+    public Builder setOutput(PrintStream output) {
+      this.output = Objects.requireNonNull(output);
+      return self();
     }
 
     /**
@@ -125,22 +131,16 @@ public final class ConsoleSolitaireReferee extends Referee {
       return self();
     }
 
-    /**
-     * @param input
-     * @return
-     */
-    public Builder setInputStream(InputStream input) {
-      this.input = Objects.requireNonNull(input, NULL_INPUT_MESSAGE);
-      return self();
-    }
-
     @Override
     protected Builder self() {
       return this;
     }
 
     @Override
-    public ConsoleSolitaireReferee build() {
+    public ConsoleSolitaireReferee build() throws StrategyInitializationException {
+      input = (input != null) ? input : new BufferedReader(new InputStreamReader(System.in));
+      output = (output != null) ? output : System.out;
+      strategy = (strategy != null) ? strategy : Strategy.newInstance(DEFAULT_STRATEGY_KEY);
       return new ConsoleSolitaireReferee(this);
     }
 

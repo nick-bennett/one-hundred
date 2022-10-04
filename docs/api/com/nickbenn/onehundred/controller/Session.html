@@ -137,8 +137,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public abstract class <span class="typeNameLabel">Session</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
 <div class="block">Generalizes launch of user interaction session and access to command-line arguments. Concrete
- subclasses must implement <a href="#run()"><code>run()</code></a> for management of user interaction (through completion).
- Subclasses</div>
+ subclasses must implement <a href="#run()"><code>run()</code></a> for management of user interaction (through completion).</div>
 </li>
 </ul>
 </div>
@@ -187,12 +186,17 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getArgs()">getArgs</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns the command-line arguments, as passed to <a href="#%3Cinit%3E(java.lang.String%5B%5D)"><code>Session(String[])</code></a>.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#run()">run</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Handles execution of the application, including processing any command-line options previously
+ passed to <a href="#%3Cinit%3E(java.lang.String%5B%5D)"><code>Session(String[])</code></a>.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -249,6 +253,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>run</h4>
 <pre class="methodSignature">public abstract&nbsp;void&nbsp;run()</pre>
+<div class="block">Handles execution of the application, including processing any command-line options previously
+ passed to <a href="#%3Cinit%3E(java.lang.String%5B%5D)"><code>Session(String[])</code></a>.</div>
 </li>
 </ul>
 <a id="getArgs()">
@@ -258,6 +264,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>getArgs</h4>
 <pre class="methodSignature">protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;getArgs()</pre>
+<div class="block">Returns the command-line arguments, as passed to <a href="#%3Cinit%3E(java.lang.String%5B%5D)"><code>Session(String[])</code></a>. The
+ reference returned is to a safe copy; thus any changes to the array contents by a consumer of
+ this method will not be reflected in the backing array, and subsequent invocations will return
+ it unchanged.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 </li>
