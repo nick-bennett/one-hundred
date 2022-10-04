@@ -184,27 +184,40 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBound()">getBound</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns the target value (for the addition game) or the starting value (for the subtraction
+ game).</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMaxMove()">getMaxMove</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns the maximum value that can be added (for the addition game) or subtracted (for the
+ subtraction game).</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../model/Game.Operation.html" title="enum in com.nickbenn.onehundred.model">Game.Operation</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOperation()">getOperation</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns the game operation or direction (i.e.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStrategy()">getStrategy</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns a key identifying the playing <a href="strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><code>Strategy</code></a> used by the computer.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isHelpRequested()">isHelpRequested</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Indicates that the <code>--help</code> or <code>-?</code> option was passed to <a href="#parse(java.lang.String%5B%5D)"><code>parse(String[])</code></a>
+ in <code>args</code>.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -217,7 +230,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#showHelp()">showHelp</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Displays the usage syntax and list of available options, with short descriptions of (and
+ default values for) each.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -275,14 +291,20 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                   <a href="strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a>,
                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></pre>
 <div class="block">Parses the specified <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String[]</code></a> (presumably containing the command-line arguments
- passed to the applications entry-point <code>main</code> method.</div>
+ passed to the applications entry-point <code>main</code> method. If a given option is not present in
+ <code>args</code>, the relevant default value (specified as a constant in the <a href="../model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a> class)
+ will be used.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>args</code> - Command-line arguments.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.apache.commons.cli.ParseException</code></dd>
-<dd><code><a href="strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code></dd>
+<dd><code>org.apache.commons.cli.ParseException</code> - If the command-line arguments are not recognized as
+                                         specifying the options defined here.</dd>
+<dd><code><a href="strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></code> - If the specified (or default) <a href="strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><code>Strategy</code></a> cannot
+                                         be instantiated.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - If any of the option values cannot be parsed from the
+                                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a> representation used in the command line
+                                         to the appropriate type.</dd>
 </dl>
 </li>
 </ul>
@@ -293,6 +315,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>showHelp</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;showHelp()</pre>
+<div class="block">Displays the usage syntax and list of available options, with short descriptions of (and
+ default values for) each.</div>
 </li>
 </ul>
 <a id="getBound()">
@@ -302,6 +326,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>getBound</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getBound()</pre>
+<div class="block">Returns the target value (for the addition game) or the starting value (for the subtraction
+ game). This value is taken either from the <code>args</code> passed to the <a href="#parse(java.lang.String%5B%5D)"><code>parse(String[])</code></a>
+ method, or from the default value specified in <a href="../model/Game.html#DEFAULT_UPPER_BOUND"><code>Game.DEFAULT_UPPER_BOUND</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 <a id="getMaxMove()">
@@ -311,6 +341,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>getMaxMove</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getMaxMove()</pre>
+<div class="block">Returns the maximum value that can be added (for the addition game) or subtracted (for the
+ subtraction game). This value is taken either from the <code>args</code> passed to the
+ <a href="#parse(java.lang.String%5B%5D)"><code>parse(String[])</code></a> method, or from the default value specified in
+ <a href="../model/Game.html#DEFAULT_MAX_MOVE"><code>Game.DEFAULT_MAX_MOVE</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 <a id="getOperation()">
@@ -320,6 +357,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>getOperation</h4>
 <pre class="methodSignature">public&nbsp;<a href="../model/Game.Operation.html" title="enum in com.nickbenn.onehundred.model">Game.Operation</a>&nbsp;getOperation()</pre>
+<div class="block">Returns the game operation or direction (i.e. addition or subtraction) as an instance of the
+ <a href="../model/Game.Operation.html" title="enum in com.nickbenn.onehundred.model"><code>Game.Operation</code></a> <code>enum</code>. This value is taken either from the <code>args</code> passed to the
+ <a href="#parse(java.lang.String%5B%5D)"><code>parse(String[])</code></a> method, or from the default value specified in
+ <a href="../model/Game.html#DEFAULT_OPERATION"><code>Game.DEFAULT_OPERATION</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 <a id="getStrategy()">
@@ -330,7 +374,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h4>getStrategy</h4>
 <pre class="methodSignature">public&nbsp;<a href="strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a>&nbsp;getStrategy()
                      throws <a href="strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></pre>
+<div class="block">Returns a key identifying the playing <a href="strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><code>Strategy</code></a> used by the computer. This value is
+ taken either from the <code>args</code> passed to the <a href="#parse(java.lang.String%5B%5D)"><code>parse(String[])</code></a> method, or from the
+ default value specified in <a href="ConsoleSolitaireReferee.html#DEFAULT_STRATEGY_KEY"><code>ConsoleSolitaireReferee.DEFAULT_STRATEGY_KEY</code></a>.</div>
 <dl>
+<dt><span class="returnLabel">Returns:</span></dt>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></code></dd>
 </dl>
@@ -343,6 +391,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>isHelpRequested</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isHelpRequested()</pre>
+<div class="block">Indicates that the <code>--help</code> or <code>-?</code> option was passed to <a href="#parse(java.lang.String%5B%5D)"><code>parse(String[])</code></a>
+ in <code>args</code>. This flag is used to display a usage information/help screen <i>instead of</i>
+ starting a game.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 </li>

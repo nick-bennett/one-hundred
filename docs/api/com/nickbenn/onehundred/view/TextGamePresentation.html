@@ -181,30 +181,41 @@ implements <a href="GamePresentation.html" title="interface in com.nickbenn.oneh
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#illegalMoveNotification(com.nickbenn.onehundred.model.Game)">illegalMoveNotification</a></span>&#8203;(<a href="../model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a>&nbsp;game)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs and returns a view object suitable for notifying the user that the most recently
+ attempted move was illegal/invalid.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#movePresentation(int,java.lang.String)">movePresentation</a></span>&#8203;(int&nbsp;move,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;player)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs and returns a view object suitable for presenting the most recent move.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#movePrompt(com.nickbenn.onehundred.model.Game)">movePrompt</a></span>&#8203;(<a href="../model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a>&nbsp;game)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs and returns a view object suitable for presenting a move prompt to the user.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nextMoveNotice(java.lang.String)">nextMoveNotice</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;player)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs and returns a view object suitable for presenting the next player to move.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stateRepresentation(com.nickbenn.onehundred.model.Game,java.lang.String,java.lang.String)">stateRepresentation</a></span>&#8203;(<a href="../model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a>&nbsp;game,
                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;playerOne,
                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;playerTwo)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs and returns a view object for presenting the current state of <code>game</code>.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -262,6 +273,8 @@ implements <a href="GamePresentation.html" title="interface in com.nickbenn.oneh
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;stateRepresentation&#8203;(<a href="../model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a>&nbsp;game,
                                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;playerOne,
                                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;playerTwo)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="GamePresentation.html#stateRepresentation(com.nickbenn.onehundred.model.Game,java.lang.String,java.lang.String)">GamePresentation</a></code></span></div>
+<div class="block">Constructs and returns a view object for presenting the current state of <code>game</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GamePresentation.html#stateRepresentation(com.nickbenn.onehundred.model.Game,java.lang.String,java.lang.String)">stateRepresentation</a></code>&nbsp;in interface&nbsp;<code><a href="GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></dd>
@@ -280,6 +293,8 @@ implements <a href="GamePresentation.html" title="interface in com.nickbenn.oneh
 <li class="blockList">
 <h4>nextMoveNotice</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;nextMoveNotice&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;player)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="GamePresentation.html#nextMoveNotice(java.lang.String)">GamePresentation</a></code></span></div>
+<div class="block">Constructs and returns a view object suitable for presenting the next player to move.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GamePresentation.html#nextMoveNotice(java.lang.String)">nextMoveNotice</a></code>&nbsp;in interface&nbsp;<code><a href="GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></dd>
@@ -297,6 +312,8 @@ implements <a href="GamePresentation.html" title="interface in com.nickbenn.oneh
 <h4>movePresentation</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;movePresentation&#8203;(int&nbsp;move,
                                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;player)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="GamePresentation.html#movePresentation(int,java.lang.String)">GamePresentation</a></code></span></div>
+<div class="block">Constructs and returns a view object suitable for presenting the most recent move.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GamePresentation.html#movePresentation(int,java.lang.String)">movePresentation</a></code>&nbsp;in interface&nbsp;<code><a href="GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></dd>
@@ -314,6 +331,8 @@ implements <a href="GamePresentation.html" title="interface in com.nickbenn.oneh
 <li class="blockList">
 <h4>movePrompt</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;movePrompt&#8203;(<a href="../model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a>&nbsp;game)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="GamePresentation.html#movePrompt(com.nickbenn.onehundred.model.Game)">GamePresentation</a></code></span></div>
+<div class="block">Constructs and returns a view object suitable for presenting a move prompt to the user.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GamePresentation.html#movePrompt(com.nickbenn.onehundred.model.Game)">movePrompt</a></code>&nbsp;in interface&nbsp;<code><a href="GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></dd>
@@ -330,6 +349,9 @@ implements <a href="GamePresentation.html" title="interface in com.nickbenn.oneh
 <li class="blockList">
 <h4>illegalMoveNotification</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;illegalMoveNotification&#8203;(<a href="../model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a>&nbsp;game)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="GamePresentation.html#illegalMoveNotification(com.nickbenn.onehundred.model.Game)">GamePresentation</a></code></span></div>
+<div class="block">Constructs and returns a view object suitable for notifying the user that the most recently
+ attempted move was illegal/invalid.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GamePresentation.html#illegalMoveNotification(com.nickbenn.onehundred.model.Game)">illegalMoveNotification</a></code>&nbsp;in interface&nbsp;<code><a href="GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></dd>

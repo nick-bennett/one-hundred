@@ -123,7 +123,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
-<dd><code>T</code> - </dd>
+<dd><code>T</code> - Type of view object used to present game status and prompts. This will typically be
+           the base type of view objects in the UI framework for which a specific implementation
+           is intended&mdash;e.g. <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a> for a console-mode implementation,
+           <code>javafx.scene.Node</code> for a JavaFX implementation, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JComponent.html?is-external=true" title="class or interface in javax.swing" class="externalLink"><code>JComponent</code></a>
+           for Swing, etc.</dd>
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
@@ -131,6 +135,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">GamePresentation&lt;T&gt;</span></pre>
+<div class="block">Declares methods that will construct and return presentations of game status, move prompts, error
+ messages, etc. Implementations of this interface are essentially display "strategies", using an
+ instance of <a href="../model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a> as the context, and constructing view objects suitable for presentation
+ in the UI environment for which the strategy is implemented.</div>
 </li>
 </ul>
 </div>
@@ -154,30 +162,41 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="GamePresentation.html" title="type parameter in GamePresentation">T</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#illegalMoveNotification(com.nickbenn.onehundred.model.Game)">illegalMoveNotification</a></span>&#8203;(<a href="../model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a>&nbsp;game)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs and returns a view object suitable for notifying the user that the most recently
+ attempted move was illegal/invalid.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="GamePresentation.html" title="type parameter in GamePresentation">T</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#movePresentation(int,java.lang.String)">movePresentation</a></span>&#8203;(int&nbsp;move,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;player)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs and returns a view object suitable for presenting the most recent move.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="GamePresentation.html" title="type parameter in GamePresentation">T</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#movePrompt(com.nickbenn.onehundred.model.Game)">movePrompt</a></span>&#8203;(<a href="../model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a>&nbsp;game)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs and returns a view object suitable for presenting a move prompt to the user.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="GamePresentation.html" title="type parameter in GamePresentation">T</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nextMoveNotice(java.lang.String)">nextMoveNotice</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;player)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs and returns a view object suitable for presenting the next player to move.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="GamePresentation.html" title="type parameter in GamePresentation">T</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stateRepresentation(com.nickbenn.onehundred.model.Game,java.lang.String,java.lang.String)">stateRepresentation</a></span>&#8203;(<a href="../model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a>&nbsp;game,
                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;playerOne,
                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;playerTwo)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs and returns a view object for presenting the current state of <code>game</code>.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -205,12 +224,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre class="methodSignature"><a href="GamePresentation.html" title="type parameter in GamePresentation">T</a>&nbsp;stateRepresentation&#8203;(<a href="../model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a>&nbsp;game,
                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;playerOne,
                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;playerTwo)</pre>
+<div class="block">Constructs and returns a view object for presenting the current state of <code>game</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>game</code> - </dd>
-<dd><code>playerOne</code> - </dd>
-<dd><code>playerTwo</code> - </dd>
+<dd><code>game</code> - Context instance of <a href="../model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a>.</dd>
+<dd><code>playerOne</code> - Identifier for the first player (the user).</dd>
+<dd><code>playerTwo</code> - Identifier for the second player (the computer).</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>View of current <a href="../model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a> state.</dd>
 </dl>
 </li>
 </ul>
@@ -221,10 +242,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>nextMoveNotice</h4>
 <pre class="methodSignature"><a href="GamePresentation.html" title="type parameter in GamePresentation">T</a>&nbsp;nextMoveNotice&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;player)</pre>
+<div class="block">Constructs and returns a view object suitable for presenting the next player to move.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>player</code> - </dd>
+<dd><code>player</code> - Player to move next.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>View presenting next player.</dd>
 </dl>
 </li>
 </ul>
@@ -236,11 +259,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <h4>movePresentation</h4>
 <pre class="methodSignature"><a href="GamePresentation.html" title="type parameter in GamePresentation">T</a>&nbsp;movePresentation&#8203;(int&nbsp;move,
                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;player)</pre>
+<div class="block">Constructs and returns a view object suitable for presenting the most recent move.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>move</code> - </dd>
-<dd><code>player</code> - </dd>
+<dd><code>move</code> - Most recent move (number added or subtracted).</dd>
+<dd><code>player</code> - Player that made the most recent move.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>View presenting most recently completed move.</dd>
 </dl>
 </li>
 </ul>
@@ -251,10 +276,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>movePrompt</h4>
 <pre class="methodSignature"><a href="GamePresentation.html" title="type parameter in GamePresentation">T</a>&nbsp;movePrompt&#8203;(<a href="../model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a>&nbsp;game)</pre>
+<div class="block">Constructs and returns a view object suitable for presenting a move prompt to the user.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>game</code> - </dd>
+<dd><code>game</code> - Context instance of <a href="../model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a>.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>View presenting prompt for next move.</dd>
 </dl>
 </li>
 </ul>
@@ -265,10 +292,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>illegalMoveNotification</h4>
 <pre class="methodSignature"><a href="GamePresentation.html" title="type parameter in GamePresentation">T</a>&nbsp;illegalMoveNotification&#8203;(<a href="../model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a>&nbsp;game)</pre>
+<div class="block">Constructs and returns a view object suitable for notifying the user that the most recently
+ attempted move was illegal/invalid.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>game</code> - </dd>
+<dd><code>game</code> - Context instance of <a href="../model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a>.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>View presenting illegal move notification.</dd>
 </dl>
 </li>
 </ul>

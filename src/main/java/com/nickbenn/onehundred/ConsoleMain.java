@@ -12,10 +12,10 @@ import com.nickbenn.onehundred.controller.ConsoleSession;
 public class ConsoleMain {
 
   /**
-   * Entry-point method.
+   * Entry-point method. Handling of command-line arguments and top-level program execution are
+   * delegated to {@link ConsoleSession}.
    *
-   * @param args Command-line arguments, which are passed to the
-   * {@link ConsoleSession#ConsoleSession(String[])} constructor.
+   * @param args Command-line arguments, which are parsed for game configuration options.
    */
   public static void main(String[] args) {
     new ConsoleSession(args).run();

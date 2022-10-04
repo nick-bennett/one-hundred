@@ -232,11 +232,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>main</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;main&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args)</pre>
-<div class="block">Entry-point method.</div>
+<div class="block">Entry-point method. Handling of command-line arguments and top-level program execution are
+ delegated to <a href="controller/ConsoleSession.html" title="class in com.nickbenn.onehundred.controller"><code>ConsoleSession</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>args</code> - Command-line arguments, which are passed to the
- <a href="controller/ConsoleSession.html#%3Cinit%3E(java.lang.String%5B%5D)"><code>ConsoleSession(String[])</code></a> constructor.</dd>
+<dd><code>args</code> - Command-line arguments, which are parsed for game configuration options.</dd>
 </dl>
 </li>
 </ul>
