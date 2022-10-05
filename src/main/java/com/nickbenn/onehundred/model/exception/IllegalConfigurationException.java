@@ -14,30 +14,20 @@ import com.nickbenn.onehundred.model.Game.State;
  *
  * @see com.nickbenn.onehundred.model.Game#Game(Operation, int, int, State)
  */
-@SuppressWarnings({"JavadocDeclaration", "unused"})
+@SuppressWarnings({"unused"})
 public class IllegalConfigurationException extends IllegalArgumentException {
 
   public IllegalConfigurationException() {
   }
 
-  /**
-   * @param message
-   */
   public IllegalConfigurationException(String message) {
     super(message);
   }
 
-  /**
-   * @param cause
-   */
   public IllegalConfigurationException(Throwable cause) {
     super(cause);
   }
 
-  /**
-   * @param message
-   * @param cause
-   */
   public IllegalConfigurationException(String message, Throwable cause) {
     super(message, cause);
   }
