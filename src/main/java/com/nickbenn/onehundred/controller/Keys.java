@@ -3,9 +3,6 @@
  */
 package com.nickbenn.onehundred.controller;
 
-/**
- *
- */
 abstract class Keys {
 
   static final String COMPUTER_NAME = "computer_name";

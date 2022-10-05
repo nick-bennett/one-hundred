@@ -8,9 +8,6 @@ import com.nickbenn.onehundred.model.Game;
 import com.nickbenn.onehundred.model.Game.Operation;
 import java.util.ResourceBundle;
 
-/**
- *
- */
 public class TextGamePresentation implements GamePresentation<String> {
 
   private final String winStatePattern;
@@ -21,10 +18,6 @@ public class TextGamePresentation implements GamePresentation<String> {
   private final String movePromptPattern;
   private final String illegalMovePattern;
 
-  /**
-   *
-   * @param operation
-   */
   public TextGamePresentation(Operation operation) {
     ResourceBundle bundle = ResourceBundle.getBundle(operation.name().toLowerCase());
     winStatePattern = bundle.getString(Keys.WIN_STATE);
@@ -36,13 +29,6 @@ public class TextGamePresentation implements GamePresentation<String> {
     illegalMovePattern = bundle.getString(Keys.ILLEGAL_MOVE);
   }
 
-  /**
-   *
-   * @param game
-   * @param playerOne
-   * @param playerTwo
-   * @return
-   */
   @Override
   public String stateRepresentation(Game game, String playerOne, String playerTwo) {
     String player = game.getState().isTerminal()
@@ -55,42 +41,21 @@ public class TextGamePresentation implements GamePresentation<String> {
         game.getUpperBound(), game.getCurrentCount(), game.getRemaining(), next);
   }
 
-  /**
-   *
-   * @param player
-   * @return
-   */
   @Override
   public String nextMoveNotice(String player) {
     return String.format(nextMovePattern, player);
   }
 
-  /**
-   *
-   * @param move
-   * @param player
-   * @return
-   */
   @Override
   public String movePresentation(int move, String player) {
     return String.format(moveReportPattern, move, player);
   }
 
-  /**
-   *
-   * @param game
-   * @return
-   */
   @Override
   public String movePrompt(Game game) {
     return String.format(movePromptPattern, Math.min(game.getMaxMove(), game.getRemaining()));
   }
 
-  /**
-   *
-   * @param game
-   * @return
-   */
   @Override
   public String illegalMoveNotification(Game game) {
     return String.format(illegalMovePattern, game.getUpperBound(), game.getMaxMove());

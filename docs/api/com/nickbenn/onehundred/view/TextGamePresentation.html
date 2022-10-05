@@ -248,10 +248,6 @@ implements <a href="GamePresentation.html" title="interface in com.nickbenn.oneh
 <li class="blockList">
 <h4>TextGamePresentation</h4>
 <pre>public&nbsp;TextGamePresentation&#8203;(<a href="../model/Game.Operation.html" title="enum in com.nickbenn.onehundred.model">Game.Operation</a>&nbsp;operation)</pre>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>operation</code> - </dd>
-</dl>
 </li>
 </ul>
 </li>
@@ -279,10 +275,11 @@ implements <a href="GamePresentation.html" title="interface in com.nickbenn.oneh
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GamePresentation.html#stateRepresentation(com.nickbenn.onehundred.model.Game,java.lang.String,java.lang.String)">stateRepresentation</a></code>&nbsp;in interface&nbsp;<code><a href="GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>game</code> - </dd>
-<dd><code>playerOne</code> - </dd>
-<dd><code>playerTwo</code> - </dd>
+<dd><code>game</code> - Context instance of <a href="../model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a>.</dd>
+<dd><code>playerOne</code> - Identifier for the first player (the user).</dd>
+<dd><code>playerTwo</code> - Identifier for the second player (the computer).</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>View of current <a href="../model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a> state.</dd>
 </dl>
 </li>
 </ul>
@@ -299,8 +296,9 @@ implements <a href="GamePresentation.html" title="interface in com.nickbenn.oneh
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GamePresentation.html#nextMoveNotice(java.lang.String)">nextMoveNotice</a></code>&nbsp;in interface&nbsp;<code><a href="GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>player</code> - </dd>
+<dd><code>player</code> - Player to move next.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>View presenting next player.</dd>
 </dl>
 </li>
 </ul>
@@ -318,9 +316,10 @@ implements <a href="GamePresentation.html" title="interface in com.nickbenn.oneh
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GamePresentation.html#movePresentation(int,java.lang.String)">movePresentation</a></code>&nbsp;in interface&nbsp;<code><a href="GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>move</code> - </dd>
-<dd><code>player</code> - </dd>
+<dd><code>move</code> - Most recent move (number added or subtracted).</dd>
+<dd><code>player</code> - Player that made the most recent move.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>View presenting most recently completed move.</dd>
 </dl>
 </li>
 </ul>
@@ -337,8 +336,9 @@ implements <a href="GamePresentation.html" title="interface in com.nickbenn.oneh
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GamePresentation.html#movePrompt(com.nickbenn.onehundred.model.Game)">movePrompt</a></code>&nbsp;in interface&nbsp;<code><a href="GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>game</code> - </dd>
+<dd><code>game</code> - Context instance of <a href="../model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a>.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>View presenting prompt for next move.</dd>
 </dl>
 </li>
 </ul>
@@ -356,8 +356,9 @@ implements <a href="GamePresentation.html" title="interface in com.nickbenn.oneh
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="GamePresentation.html#illegalMoveNotification(com.nickbenn.onehundred.model.Game)">illegalMoveNotification</a></code>&nbsp;in interface&nbsp;<code><a href="GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>game</code> - </dd>
+<dd><code>game</code> - Context instance of <a href="../model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a>.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>View presenting illegal move notification.</dd>
 </dl>
 </li>
 </ul>
