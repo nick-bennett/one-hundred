@@ -8,6 +8,14 @@ import com.nickbenn.onehundred.model.Game;
 import com.nickbenn.onehundred.model.Game.Operation;
 import java.util.ResourceBundle;
 
+/**
+ * Implements the {@link GamePresentation} interface for the {@link String} type.
+ * <ul>
+ *   <li>First item</li>
+ *   <li>Second item</li>
+ *   <li>...</li>
+ * </ul>
+ */
 public class TextGamePresentation implements GamePresentation<String> {
 
   private final String winStatePattern;
@@ -18,6 +26,10 @@ public class TextGamePresentation implements GamePresentation<String> {
   private final String movePromptPattern;
   private final String illegalMovePattern;
 
+  /**
+   * TODO Finish comment.
+   * @param operation
+   */
   public TextGamePresentation(Operation operation) {
     ResourceBundle bundle = ResourceBundle.getBundle(operation.name().toLowerCase());
     winStatePattern = bundle.getString(Keys.WIN_STATE);
