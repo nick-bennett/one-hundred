@@ -11,8 +11,6 @@ import com.nickbenn.onehundred.controller.ConsoleSession;
  */
 public class ConsoleMain {
 
-  private ConsoleMain() {}
-
   /**
    * Entry-point method. Handling of command-line arguments and top-level program execution are
    * delegated to {@link ConsoleSession}.

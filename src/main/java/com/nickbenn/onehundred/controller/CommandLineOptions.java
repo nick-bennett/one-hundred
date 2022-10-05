@@ -50,7 +50,8 @@ public class CommandLineOptions {
   private boolean helpRequested;
 
   /**
-   * Initializes this instance by adding all of the required options.
+   * Initialize this instance by defining the various options to be recognized by
+   * {@link #parse(String[])}.
    */
   public CommandLineOptions() {
     ResourceBundle bundle = ResourceBundle.getBundle(OPTIONS_BUNDLE_NAME);
