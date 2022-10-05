@@ -206,10 +206,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="../model/strategy/Strategy.html" title="class in com.nickbenn.onehundred.model.strategy">Strategy</a></code></td>
+<td class="colFirst"><code><a href="../strategy/Strategy.html" title="class in com.nickbenn.onehundred.strategy">Strategy</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStrategy()">getStrategy</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns a key identifying the playing <a href="../model/strategy/Strategy.html" title="class in com.nickbenn.onehundred.model.strategy"><code>Strategy</code></a> used by the computer.</div>
+<div class="block">Returns a key identifying the playing <a href="../strategy/Strategy.html" title="class in com.nickbenn.onehundred.strategy"><code>Strategy</code></a> used by the computer.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
@@ -289,7 +289,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h4>parse</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;parse&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args)
            throws org.apache.commons.cli.ParseException,
-                  <a href="../model/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.model.strategy">Strategy.StrategyInitializationException</a>,
+                  <a href="../strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.strategy">Strategy.StrategyInitializationException</a>,
                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></pre>
 <div class="block">Parses the specified <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String[]</code></a> (presumably containing the command-line arguments
  passed to the applications entry-point <code>main</code> method). If a given option is not present
@@ -301,7 +301,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>org.apache.commons.cli.ParseException</code> - If the command-line arguments are not recognized as
                                          specifying the options defined here.</dd>
-<dd><code><a href="../model/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.model.strategy">Strategy.StrategyInitializationException</a></code> - If the specified (or default) <a href="../model/strategy/Strategy.html" title="class in com.nickbenn.onehundred.model.strategy"><code>Strategy</code></a> cannot
+<dd><code><a href="../strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.strategy">Strategy.StrategyInitializationException</a></code> - If the specified (or default) <a href="../strategy/Strategy.html" title="class in com.nickbenn.onehundred.strategy"><code>Strategy</code></a> cannot
                                          be instantiated.</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - If any of the option values cannot be parsed from the
                                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a> representation used in the command line
@@ -376,16 +376,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <ul class="blockList">
 <li class="blockList">
 <h4>getStrategy</h4>
-<pre class="methodSignature">public&nbsp;<a href="../model/strategy/Strategy.html" title="class in com.nickbenn.onehundred.model.strategy">Strategy</a>&nbsp;getStrategy()
-                     throws <a href="../model/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.model.strategy">Strategy.StrategyInitializationException</a></pre>
-<div class="block">Returns a key identifying the playing <a href="../model/strategy/Strategy.html" title="class in com.nickbenn.onehundred.model.strategy"><code>Strategy</code></a> used by the computer. This value is
+<pre class="methodSignature">public&nbsp;<a href="../strategy/Strategy.html" title="class in com.nickbenn.onehundred.strategy">Strategy</a>&nbsp;getStrategy()</pre>
+<div class="block">Returns a key identifying the playing <a href="../strategy/Strategy.html" title="class in com.nickbenn.onehundred.strategy"><code>Strategy</code></a> used by the computer. This value is
  taken either from the <code>args</code> passed to the <a href="#parse(java.lang.String%5B%5D)"><code>parse(String[])</code></a> method, or from the
  default value specified in <a href="ConsoleSolitaireReferee.html#DEFAULT_STRATEGY_KEY"><code>ConsoleSolitaireReferee.DEFAULT_STRATEGY_KEY</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>(See above.)</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../model/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.model.strategy">Strategy.StrategyInitializationException</a></code></dd>
 </dl>
 </li>
 </ul>

@@ -160,7 +160,7 @@ public class Game {
   /**
    * Returns a flag indicating whether the next move made will be the first so far in the game.
    * Implementations of {@link com.nickbenn.onehundred.view.GamePresentation} or subclasses of
-   * {@link com.nickbenn.onehundred.model.strategy.Strategy} may make use of this information,
+   * {@link com.nickbenn.onehundred.strategy.Strategy} may make use of this information,
    * but they are not required to do so.
    *
    * @return (See above.)

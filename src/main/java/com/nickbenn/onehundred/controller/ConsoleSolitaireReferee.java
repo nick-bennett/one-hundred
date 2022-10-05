@@ -3,8 +3,8 @@
  */
 package com.nickbenn.onehundred.controller;
 
-import com.nickbenn.onehundred.model.strategy.Strategy;
-import com.nickbenn.onehundred.model.strategy.Strategy.StrategyInitializationException;
+import com.nickbenn.onehundred.strategy.Strategy;
+import com.nickbenn.onehundred.strategy.Strategy.StrategyInitializationException;
 import com.nickbenn.onehundred.model.Game;
 import com.nickbenn.onehundred.view.GamePresentation;
 import java.io.BufferedReader;
