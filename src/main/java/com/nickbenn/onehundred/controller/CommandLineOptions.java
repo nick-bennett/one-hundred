@@ -3,8 +3,8 @@
  */
 package com.nickbenn.onehundred.controller;
 
-import com.nickbenn.onehundred.controller.strategy.Strategy;
-import com.nickbenn.onehundred.controller.strategy.Strategy.StrategyInitializationException;
+import com.nickbenn.onehundred.model.strategy.Strategy;
+import com.nickbenn.onehundred.model.strategy.Strategy.StrategyInitializationException;
 import com.nickbenn.onehundred.model.Game;
 import com.nickbenn.onehundred.model.Game.Operation;
 import java.util.ResourceBundle;
@@ -22,7 +22,6 @@ import org.apache.commons.cli.ParseException;
  * include one ({@code --help} or {@code -?}) which is used to display a usage information/help
  * screen.
  */
-@SuppressWarnings("JavadocDeclaration")
 public class CommandLineOptions {
 
   private static final String OPTIONS_BUNDLE_NAME = "options";
@@ -68,8 +67,8 @@ public class CommandLineOptions {
 
   /**
    * Parses the specified {@link String String[]} (presumably containing the command-line arguments
-   * passed to the applications entry-point {@code main} method. If a given option is not present in
-   * {@code args}, the relevant default value (specified as a constant in the {@link Game} class)
+   * passed to the applications entry-point {@code main} method). If a given option is not present
+   * in {@code args}, the relevant default value (specified as a constant in the {@link Game} class)
    * will be used.
    *
    * @param args Command-line arguments.
@@ -114,7 +113,7 @@ public class CommandLineOptions {
    * game). This value is taken either from the {@code args} passed to the {@link #parse(String[])}
    * method, or from the default value specified in {@link Game#DEFAULT_UPPER_BOUND}.
    *
-   * @return
+   * @return (See above.)
    */
   public int getBound() {
     return bound;
@@ -126,7 +125,7 @@ public class CommandLineOptions {
    * {@link #parse(String[])} method, or from the default value specified in
    * {@link Game#DEFAULT_MAX_MOVE}.
    *
-   * @return
+   * @return (See above.)
    */
   public int getMaxMove() {
     return maxMove;
@@ -138,7 +137,7 @@ public class CommandLineOptions {
    * the {@link #parse(String[])} method, or from the default value specified in
    * {@link Game#DEFAULT_OPERATION}.
    *
-   * @return
+   * @return (See above.)
    */
   public Operation getOperation() {
     return operation;
@@ -149,7 +148,7 @@ public class CommandLineOptions {
    * taken either from the {@code args} passed to the {@link #parse(String[])} method, or from the
    * default value specified in {@link ConsoleSolitaireReferee#DEFAULT_STRATEGY_KEY}.
    *
-   * @return
+   * @return (See above.)
    */
   public Strategy getStrategy() throws StrategyInitializationException {
     return strategy;
@@ -160,7 +159,7 @@ public class CommandLineOptions {
    * in {@code args}. This flag is used to display a usage information/help screen <i>instead of</i>
    * starting a game.
    *
-   * @return
+   * @return (See above.)
    */
   public boolean isHelpRequested() {
     return helpRequested;

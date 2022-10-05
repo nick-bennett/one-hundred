@@ -10,7 +10,7 @@ import com.nickbenn.onehundred.model.exception.IllegalMoveException;
 /**
  * Encapsulates the configuration and current state of a single game of One Hundred.
  */
-@SuppressWarnings({"unused", "JavadocDeclaration"})
+@SuppressWarnings({"unused"})
 public class Game {
 
   /**
@@ -101,7 +101,7 @@ public class Game {
    * Returns {@link Operation#ADDITION} or {@link Operation#SUBTRACTION}, as set in
    * {@link Game#Game(Operation, int, int, State)}.
    *
-   * @return
+   * @return (See above.)
    */
   public Operation getOperation() {
     return operation;
@@ -111,7 +111,7 @@ public class Game {
    * Returns the upper bound&mdash;that is, the target value (for addition) or initial value (for
    * subtraction), as set in {@link Game#Game(Operation, int, int, State)}.
    *
-   * @return
+   * @return (See above.)
    */
   public int getUpperBound() {
     return upperBound;
@@ -121,7 +121,7 @@ public class Game {
    * Returns the maximum quantity that may be added or subtracted, as set in
    * {@link Game#Game(Operation, int, int, State)}.
    *
-   * @return
+   * @return (See above.)
    */
   public int getMaxMove() {
     return maxMove;
@@ -131,7 +131,7 @@ public class Game {
    * Returns the target value (for an addition game) or starting value (for a subtraction game), as
    * set in {@link Game#Game(Operation, int, int, State)}.
    *
-   * @return
+   * @return (See above.)
    */
   public int getTarget() {
     return target;
@@ -141,7 +141,7 @@ public class Game {
    * Returns the current total&mdash;that is, the initial value, with the sum of all moves made in
    * the game so far added or subtracted, according to {@link #getOperation()}.
    *
-   * @return
+   * @return (See above.)
    */
   public int getCurrentCount() {
     return currentCount;
@@ -151,7 +151,7 @@ public class Game {
    * Returns the current {@link State}, indicating either the next player to move (for an
    * in-progress game) or the winner player (for a completed game).
    *
-   * @return
+   * @return (See above.)
    */
   public State getState() {
     return state;
@@ -160,10 +160,10 @@ public class Game {
   /**
    * Returns a flag indicating whether the next move made will be the first so far in the game.
    * Implementations of {@link com.nickbenn.onehundred.view.GamePresentation} or subclasses of
-   * {@link com.nickbenn.onehundred.controller.strategy.Strategy} may make use of this information,
+   * {@link com.nickbenn.onehundred.model.strategy.Strategy} may make use of this information,
    * but they are not required to do so.
    *
-   * @return
+   * @return (See above.)
    */
   public boolean isFirstMove() {
     return firstMove;
@@ -175,7 +175,7 @@ public class Game {
    * {@code (}{@link #getTarget() getTarget() - }{@link #getCurrentCount()}{@code )}; for a
    * subtraction game, it is simply {@link #getCurrentCount()}.
    *
-   * @return
+   * @return (See above.)
    */
   public int getRemaining() {
     return (operation == Operation.ADDITION)
@@ -189,7 +189,9 @@ public class Game {
    */
   public enum State {
 
-    /** Indicates that player 1 is the next to move. */
+    /**
+     * Indicates that player 1 is the next to move.
+     */
     PLAYER_ONE_MOVE {
       @Override
       public boolean isInitial() {
@@ -211,7 +213,9 @@ public class Game {
         return PLAYER_ONE_WIN;
       }
     },
-    /** Indicates that player 2 is the next to move. */
+    /**
+     * Indicates that player 2 is the next to move.
+     */
     PLAYER_TWO_MOVE {
       @Override
       public boolean isInitial() {
@@ -233,9 +237,13 @@ public class Game {
         return PLAYER_TWO_WIN;
       }
     },
-    /** Indicates that player 1 has won the game. */
+    /**
+     * Indicates that player 1 has won the game.
+     */
     PLAYER_ONE_WIN,
-    /** Indicates that player 2 has won the game. */
+    /**
+     * Indicates that player 2 has won the game.
+     */
     PLAYER_TWO_WIN;
 
     private static final String NO_MOVES_ALLOWED_FORMAT =
@@ -248,7 +256,7 @@ public class Game {
     /**
      * Returns a flag indicating whether this state is one of the allowed initial states.
      *
-     * @return
+     * @return (See above.)
      */
     public boolean isInitial() {
       return false;
@@ -258,7 +266,7 @@ public class Game {
      * Returns a flag indicating whether this state is one of the terminal states, from which no
      * further moves are possible.
      *
-     * @return
+     * @return (See above.)
      */
     public boolean isTerminal() {
       return true;
@@ -316,7 +324,7 @@ public class Game {
     /**
      * Returns 1 for addition and -1 for subtraction.
      *
-     * @return
+     * @return (See above.)
      */
     public int sign() {
       return sign;

@@ -34,9 +34,8 @@ public abstract class Session {
    * this method will not be reflected in the backing array, and subsequent invocations will return
    * it unchanged.
    *
-   * @return
+   * @return (See above.)
    */
-  @SuppressWarnings("JavadocDeclaration")
   protected String[] getArgs() {
     return Arrays.copyOf(args, args.length);
   }

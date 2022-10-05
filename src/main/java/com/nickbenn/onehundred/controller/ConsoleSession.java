@@ -3,7 +3,7 @@
  */
 package com.nickbenn.onehundred.controller;
 
-import com.nickbenn.onehundred.controller.strategy.Strategy.StrategyInitializationException;
+import com.nickbenn.onehundred.model.strategy.Strategy.StrategyInitializationException;
 import com.nickbenn.onehundred.model.Game;
 import com.nickbenn.onehundred.model.Game.State;
 import com.nickbenn.onehundred.view.GamePresentation;
@@ -12,7 +12,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.io.PrintWriter;
 import java.util.ResourceBundle;
 import org.apache.commons.cli.ParseException;
 

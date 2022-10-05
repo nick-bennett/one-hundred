@@ -17,7 +17,6 @@ import java.util.Objects;
  * {@link GamePresentation GamePresentation&lt;T&gt;} instance, provided via the
  * {@link Builder#Builder(GamePresentation)} instantiation.
  */
-@SuppressWarnings("JavadocDeclaration")
 public abstract class Referee {
 
   private final GamePresentation<?> presentation;
@@ -64,7 +63,7 @@ public abstract class Referee {
   /**
    * Returns the {@link Game} instance representing the game currently being played.
    *
-   * @return
+   * @return (See above.)
    */
   protected Game getGame() {
     return game;
@@ -94,7 +93,7 @@ public abstract class Referee {
    * with view objects of subtypes of that specified in the
    * {@link GamePresentation GamePresentation&lt;T&gt;} type parameter.
    *
-   * @return
+   * @return (See above.)
    */
   protected abstract int getMove();
 
@@ -137,7 +136,7 @@ public abstract class Referee {
    * Returns the {@link GamePresentation GamePresentation&lt;T&gt;} instance for use by subclasses.
    * This method should generally not be overridden.
    *
-   * @return
+   * @return (See above.)
    */
   protected GamePresentation<?> getPresentation() {
     return presentation;
@@ -178,7 +177,7 @@ public abstract class Referee {
      * created by this builder. If this method is not invoked, the default is
      * {@link Operation#ADDITION}.
      *
-     * @param operation
+     * @param operation (See above.)
      * @return This {@link Builder} instance.
      */
     public B setOperation(Operation operation) {
@@ -190,7 +189,7 @@ public abstract class Referee {
      * Specifies the initial game state. {@code initialState} must be either
      * {@link State#PLAYER_ONE_MOVE} (the default) or {@link State#PLAYER_TWO_MOVE}.
      *
-     * @param initialState
+     * @param initialState (See above.)
      * @return This {@link Builder} instance.
      */
     public B setInitialState(State initialState) {
@@ -199,7 +198,10 @@ public abstract class Referee {
     }
 
     /**
-     * @param target
+     * Specifies the target value (for an addition game) or the initial value (for a subtraction
+     * game). If not set, {@link Game#DEFAULT_UPPER_BOUND} will be used by default.
+     *
+     * @param target (See above.)
      * @return This {@link Builder} instance.
      */
     public B setTarget(int target) {
@@ -208,7 +210,10 @@ public abstract class Referee {
     }
 
     /**
-     * @param maxMove
+     * Specifies the maximum quantity that may be added or subtracted in each move. If not set,
+     * {@link Game#DEFAULT_MAX_MOVE} will be used by default.
+     *
+     * @param maxMove (See above.)
      * @return This {@link Builder} instance.
      */
     public B setMaxMove(int maxMove) {
@@ -217,12 +222,16 @@ public abstract class Referee {
     }
 
     /**
-     * @return Fully initialized {@link Referee} instance.
+     * Creates and returns a fully initialized {@link Referee} instance.
+     *
+     * @return (See above.)
      */
     protected abstract Referee build();
 
     /**
-     * @return
+     * Returns the self-typed reference to this {@link Builder} instance.
+     *
+     * @return (See above.)
      */
     protected abstract B self();
 

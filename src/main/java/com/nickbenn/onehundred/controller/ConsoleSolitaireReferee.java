@@ -3,8 +3,8 @@
  */
 package com.nickbenn.onehundred.controller;
 
-import com.nickbenn.onehundred.controller.strategy.Strategy;
-import com.nickbenn.onehundred.controller.strategy.Strategy.StrategyInitializationException;
+import com.nickbenn.onehundred.model.strategy.Strategy;
+import com.nickbenn.onehundred.model.strategy.Strategy.StrategyInitializationException;
 import com.nickbenn.onehundred.model.Game;
 import com.nickbenn.onehundred.view.GamePresentation;
 import java.io.BufferedReader;
@@ -89,7 +89,7 @@ public final class ConsoleSolitaireReferee extends Referee {
    * Concrete implementation of the Builder pattern used for constructing instances of
    * {@link ConsoleSolitaireReferee}.
    */
-  @SuppressWarnings({"unused", "JavadocDeclaration"})
+  @SuppressWarnings({"unused"})
   public static class Builder extends Referee.Builder<Builder> {
 
     private static final String NULL_STRATEGY_MESSAGE =
@@ -126,7 +126,7 @@ public final class ConsoleSolitaireReferee extends Referee {
      * {@link ConsoleSolitaireReferee} to obtain user input. If not set, a {@link BufferedReader}
      * that reads from {@link System#in} will be used.
      *
-     * @param input
+     * @param input (See above.)
      * @return This {@link Builder} instance.
      */
     public Builder setInput(BufferedReader input) {
@@ -139,7 +139,7 @@ public final class ConsoleSolitaireReferee extends Referee {
      * {@link ConsoleSolitaireReferee} to present output to the user. If not set, {@link System#out}
      * will be used.
      *
-     * @param output
+     * @param output (See above.)
      * @return This {@link Builder} instance.
      */
     public Builder setOutput(PrintStream output) {
@@ -153,7 +153,7 @@ public final class ConsoleSolitaireReferee extends Referee {
      * {@code strategy.properties}) by {@link ConsoleSolitaireReferee#DEFAULT_STRATEGY_KEY} will be
      * created and used.
      *
-     * @param strategy
+     * @param strategy (See above.)
      * @return This {@link Builder} instance.
      */
     public Builder setStrategy(Strategy strategy) {

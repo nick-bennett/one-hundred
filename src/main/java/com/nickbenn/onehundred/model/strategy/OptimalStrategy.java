@@ -1,7 +1,7 @@
 /*
  * Copyright 2022 Nicholas Bennett. See LICENSE for software license terms.
  */
-package com.nickbenn.onehundred.controller.strategy;
+package com.nickbenn.onehundred.model.strategy;
 
 import com.nickbenn.onehundred.model.Game;
 

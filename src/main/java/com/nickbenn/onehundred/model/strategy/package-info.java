@@ -6,4 +6,4 @@
  * Abstract and concrete classes declaring and implementing computer strategies for playing the
  * game.
  */
-package com.nickbenn.onehundred.controller.strategy;
+package com.nickbenn.onehundred.model.strategy;
