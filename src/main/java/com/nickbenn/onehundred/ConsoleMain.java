@@ -11,9 +11,13 @@ import com.nickbenn.onehundred.controller.ConsoleSession;
  */
 public class ConsoleMain {
 
+  private ConsoleMain() {
+    // Prevent creation (and documentation) of a default constructor.
+  }
+
   /**
-   * Entry-point method. Handling of command-line arguments and top-level program execution are
-   * delegated to {@link ConsoleSession}.
+   * Acts as an entry-point for the application. Command-line argument handling and top-level
+   * program execution are delegated to {@link ConsoleSession}.
    *
    * @param args Command-line arguments, which are parsed for game configuration options.
    */

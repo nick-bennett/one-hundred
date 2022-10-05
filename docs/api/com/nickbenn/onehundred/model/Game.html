@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Game</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
+<div class="block">Encapsulates the configuration and current state of a single game of One Hundred.</div>
 </li>
 </ul>
 </div>
@@ -155,12 +156,18 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Game.Operation.html" title="enum in com.nickbenn.onehundred.model">Game.Operation</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Encapsulates the possible "directions" of play&mdash;that is, the arithmetic operation
+ performed in all moves of a game using a given <code>Operation</code> enumerated value.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Encapsulates the possible states of a single <a href="Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a>, as well as validation of all
+ state-changing operations.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -183,17 +190,23 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#DEFAULT_MAX_MOVE">DEFAULT_MAX_MOVE</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Default maximum amount allowed to be added or subtracted in each move.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static <a href="Game.Operation.html" title="enum in com.nickbenn.onehundred.model">Game.Operation</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#DEFAULT_OPERATION">DEFAULT_OPERATION</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Default game operation (direction).</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#DEFAULT_UPPER_BOUND">DEFAULT_UPPER_BOUND</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Default target value (for addition game) or starting value (for subtraction game).</div>
+</td>
 </tr>
 </table>
 </li>
@@ -217,7 +230,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
     int&nbsp;upperBound,
     int&nbsp;maxMove,
     <a href="Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a>&nbsp;initialState)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Initializes this instance with the specified configuration parameters.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -240,47 +255,71 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCurrentCount()">getCurrentCount</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns the current total&mdash;that is, the initial value, with the sum of all moves made in
+ the game so far added or subtracted, according to <a href="#getOperation()"><code>getOperation()</code></a>.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMaxMove()">getMaxMove</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns the maximum quantity that may be added or subtracted, as set in
+ <a href="#%3Cinit%3E(com.nickbenn.onehundred.model.Game.Operation,int,int,com.nickbenn.onehundred.model.Game.State)"><code>Game(Operation, int, int, State)</code></a>.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="Game.Operation.html" title="enum in com.nickbenn.onehundred.model">Game.Operation</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOperation()">getOperation</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns <a href="Game.Operation.html#ADDITION"><code>Game.Operation.ADDITION</code></a> or <a href="Game.Operation.html#SUBTRACTION"><code>Game.Operation.SUBTRACTION</code></a>, as set in
+ <a href="#%3Cinit%3E(com.nickbenn.onehundred.model.Game.Operation,int,int,com.nickbenn.onehundred.model.Game.State)"><code>Game(Operation, int, int, State)</code></a>.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRemaining()">getRemaining</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns the non-negative difference between the current and target values.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getState()">getState</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns the current <a href="Game.State.html" title="enum in com.nickbenn.onehundred.model"><code>Game.State</code></a>, indicating either the next player to move (for an
+ in-progress game) or the winner player (for a completed game).</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTarget()">getTarget</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns the target value (for an addition game) or starting value (for a subtraction game), as
+ set in <a href="#%3Cinit%3E(com.nickbenn.onehundred.model.Game.Operation,int,int,com.nickbenn.onehundred.model.Game.State)"><code>Game(Operation, int, int, State)</code></a>.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUpperBound()">getUpperBound</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns the upper bound&mdash;that is, the target value (for addition) or initial value (for
+ subtraction), as set in <a href="#%3Cinit%3E(com.nickbenn.onehundred.model.Game.Operation,int,int,com.nickbenn.onehundred.model.Game.State)"><code>Game(Operation, int, int, State)</code></a>.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isFirstMove()">isFirstMove</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns a flag indicating whether the next move made will be the first so far in the game.</div>
+</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#play(int)">play</a></span>&#8203;(int&nbsp;move)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Updates the state of this instance by applying the specified move.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -313,6 +352,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>DEFAULT_UPPER_BOUND</h4>
 <pre>public static final&nbsp;int DEFAULT_UPPER_BOUND</pre>
+<div class="block">Default target value (for addition game) or starting value (for subtraction game).</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../constant-values.html#com.nickbenn.onehundred.model.Game.DEFAULT_UPPER_BOUND">Constant Field Values</a></dd>
@@ -326,6 +366,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>DEFAULT_MAX_MOVE</h4>
 <pre>public static final&nbsp;int DEFAULT_MAX_MOVE</pre>
+<div class="block">Default maximum amount allowed to be added or subtracted in each move.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../constant-values.html#com.nickbenn.onehundred.model.Game.DEFAULT_MAX_MOVE">Constant Field Values</a></dd>
@@ -339,6 +380,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>DEFAULT_OPERATION</h4>
 <pre>public static final&nbsp;<a href="Game.Operation.html" title="enum in com.nickbenn.onehundred.model">Game.Operation</a> DEFAULT_OPERATION</pre>
+<div class="block">Default game operation (direction).</div>
 </li>
 </ul>
 </li>
@@ -362,13 +404,22 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
             int&nbsp;maxMove,
             <a href="Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a>&nbsp;initialState)
      throws <a href="exception/IllegalConfigurationException.html" title="class in com.nickbenn.onehundred.model.exception">IllegalConfigurationException</a></pre>
+<div class="block">Initializes this instance with the specified configuration parameters. Once initialized, the
+ configuration of the game does not change.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>upperBound</code> - </dd>
-<dd><code>maxMove</code> - </dd>
-<dd><code>initialState</code> - </dd>
+<dd><code>operation</code> - Direction of game (addition or subtraction), specified as one of the
+                     enumerated values of <a href="Game.Operation.html" title="enum in com.nickbenn.onehundred.model"><code>Game.Operation</code></a>.</dd>
+<dd><code>upperBound</code> - Target value (for addition game) or starting value (for subtraction game).</dd>
+<dd><code>maxMove</code> - Maximum quantity allowed to be added or subtracted in each move.</dd>
+<dd><code>initialState</code> - Player to make the first move, specified as <a href="Game.State.html#PLAYER_ONE_MOVE"><code>Game.State.PLAYER_ONE_MOVE</code></a>
+                     or <a href="Game.State.html#PLAYER_TWO_MOVE"><code>Game.State.PLAYER_TWO_MOVE</code></a>.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="exception/IllegalConfigurationException.html" title="class in com.nickbenn.onehundred.model.exception">IllegalConfigurationException</a></code></dd>
+<dd><code><a href="exception/IllegalConfigurationException.html" title="class in com.nickbenn.onehundred.model.exception">IllegalConfigurationException</a></code> - If <code>upperBound</code> or <code>maxMove</code> is non-positive,
+                                       <code>(maxMove &gt;= upperBound)</code>, or if
+                                       <code>initialState</code> is neither
+                                       <a href="Game.State.html#PLAYER_ONE_MOVE"><code>Game.State.PLAYER_ONE_MOVE</code></a> nor
+                                       <a href="Game.State.html#PLAYER_TWO_MOVE"><code>Game.State.PLAYER_TWO_MOVE</code></a>.</dd>
 </dl>
 </li>
 </ul>
@@ -388,10 +439,20 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <ul class="blockList">
 <li class="blockList">
 <h4>play</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;play&#8203;(int&nbsp;move)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;play&#8203;(int&nbsp;move)
+          throws <a href="exception/GameFinishedException.html" title="class in com.nickbenn.onehundred.model.exception">GameFinishedException</a>,
+                 <a href="exception/IllegalMoveException.html" title="class in com.nickbenn.onehundred.model.exception">IllegalMoveException</a></pre>
+<div class="block">Updates the state of this instance by applying the specified move.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>move</code> - </dd>
+<dd><code>move</code> - Quantity to be added (for an addition game) or subtracted (for a subtraction
+             game).</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="exception/GameFinishedException.html" title="class in com.nickbenn.onehundred.model.exception">GameFinishedException</a></code> - If the game is already completed, and thus permits no further
+                               moves.</dd>
+<dd><code><a href="exception/IllegalMoveException.html" title="class in com.nickbenn.onehundred.model.exception">IllegalMoveException</a></code> - If <code>move</code> is non-positive, exceeds the maximum move
+                               allowed, or would result in a total exceeding the target (for an
+                               addition game) or less than zero (for a subtraction game).</dd>
 </dl>
 </li>
 </ul>
@@ -402,6 +463,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>getOperation</h4>
 <pre class="methodSignature">public&nbsp;<a href="Game.Operation.html" title="enum in com.nickbenn.onehundred.model">Game.Operation</a>&nbsp;getOperation()</pre>
+<div class="block">Returns <a href="Game.Operation.html#ADDITION"><code>Game.Operation.ADDITION</code></a> or <a href="Game.Operation.html#SUBTRACTION"><code>Game.Operation.SUBTRACTION</code></a>, as set in
+ <a href="#%3Cinit%3E(com.nickbenn.onehundred.model.Game.Operation,int,int,com.nickbenn.onehundred.model.Game.State)"><code>Game(Operation, int, int, State)</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 </dl>
@@ -414,6 +477,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>getUpperBound</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getUpperBound()</pre>
+<div class="block">Returns the upper bound&mdash;that is, the target value (for addition) or initial value (for
+ subtraction), as set in <a href="#%3Cinit%3E(com.nickbenn.onehundred.model.Game.Operation,int,int,com.nickbenn.onehundred.model.Game.State)"><code>Game(Operation, int, int, State)</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 </dl>
@@ -426,42 +491,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>getMaxMove</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getMaxMove()</pre>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-</dl>
-</li>
-</ul>
-<a id="getCurrentCount()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getCurrentCount</h4>
-<pre class="methodSignature">public&nbsp;int&nbsp;getCurrentCount()</pre>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-</dl>
-</li>
-</ul>
-<a id="getState()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getState</h4>
-<pre class="methodSignature">public&nbsp;<a href="Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a>&nbsp;getState()</pre>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-</dl>
-</li>
-</ul>
-<a id="isFirstMove()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>isFirstMove</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;isFirstMove()</pre>
+<div class="block">Returns the maximum quantity that may be added or subtracted, as set in
+ <a href="#%3Cinit%3E(com.nickbenn.onehundred.model.Game.Operation,int,int,com.nickbenn.onehundred.model.Game.State)"><code>Game(Operation, int, int, State)</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 </dl>
@@ -474,6 +505,55 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>getTarget</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getTarget()</pre>
+<div class="block">Returns the target value (for an addition game) or starting value (for a subtraction game), as
+ set in <a href="#%3Cinit%3E(com.nickbenn.onehundred.model.Game.Operation,int,int,com.nickbenn.onehundred.model.Game.State)"><code>Game(Operation, int, int, State)</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="getCurrentCount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurrentCount</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getCurrentCount()</pre>
+<div class="block">Returns the current total&mdash;that is, the initial value, with the sum of all moves made in
+ the game so far added or subtracted, according to <a href="#getOperation()"><code>getOperation()</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="getState()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getState</h4>
+<pre class="methodSignature">public&nbsp;<a href="Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a>&nbsp;getState()</pre>
+<div class="block">Returns the current <a href="Game.State.html" title="enum in com.nickbenn.onehundred.model"><code>Game.State</code></a>, indicating either the next player to move (for an
+ in-progress game) or the winner player (for a completed game).</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="isFirstMove()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isFirstMove</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isFirstMove()</pre>
+<div class="block">Returns a flag indicating whether the next move made will be the first so far in the game.
+ Implementations of <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation</code></a> or subclasses of
+ <a href="../controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><code>Strategy</code></a> may make use of this information,
+ but they are not required to do so.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 <a id="getRemaining()">
@@ -483,6 +563,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>getRemaining</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getRemaining()</pre>
+<div class="block">Returns the non-negative difference between the current and target values. For an addition
+ game, this will be equal to
+ <code>(</code><a href="#getTarget()"><code>getTarget() - </code></a><a href="#getCurrentCount()"><code>getCurrentCount()</code></a><code>)</code>; for a
+ subtraction game, it is simply <a href="#getCurrentCount()"><code>getCurrentCount()</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 </li>

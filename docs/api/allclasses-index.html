@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":2,"i1":2,"i2":2,"i3":2,"i4":2,"i5":2,"i6":4,"i7":4,"i8":8,"i9":1,"i10":8,"i11":8,"i12":2,"i13":2,"i14":2,"i15":2,"i16":2,"i17":2,"i18":2,"i19":8,"i20":2};
+var data = {"i0":2,"i1":2,"i2":2,"i3":2,"i4":2,"i5":2,"i6":4,"i7":4,"i8":8,"i9":1,"i10":8,"i11":8,"i12":2,"i13":2,"i14":2,"i15":2,"i16":2,"i17":2,"i18":8,"i19":2};
 var tabs = {65535:["t0","All Classes"],1:["t1","Interface Summary"],2:["t2","Class Summary"],4:["t3","Enum Summary"],8:["t4","Exception Summary"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -137,23 +137,37 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Concrete implementation of the Builder pattern used for constructing instances of
+ <a href="com/nickbenn/onehundred/controller/ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller"><code>ConsoleSolitaireReferee</code></a>.</div>
+</th>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model">Game</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Encapsulates the configuration and current state of a single game of One Hundred.</div>
+</th>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/model/Game.Operation.html" title="enum in com.nickbenn.onehundred.model">Game.Operation</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Encapsulates the possible "directions" of play&mdash;that is, the arithmetic operation
+ performed in all moves of a game using a given <code>Operation</code> enumerated value.</div>
+</th>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/model/Game.State.html" title="enum in com.nickbenn.onehundred.model">Game.State</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Encapsulates the possible states of a single <a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a>, as well as validation of all
+ state-changing operations.</div>
+</th>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/model/exception/GameFinishedException.html" title="class in com.nickbenn.onehundred.model.exception">GameFinishedException</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Represents the exceptional condition resulting from an attempt to make a move in a game that is
+ already completed.</div>
+</th>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;<a href="com/nickbenn/onehundred/view/GamePresentation.html" title="type parameter in GamePresentation">T</a>&gt;</td>
@@ -164,50 +178,49 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/model/exception/IllegalConfigurationException.html" title="class in com.nickbenn.onehundred.model.exception">IllegalConfigurationException</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Represents the exceptional condition arising when the initial configuration of a
+ <a href="com/nickbenn/onehundred/model/Game.html" title="class in com.nickbenn.onehundred.model"><code>Game</code></a> is not valid.</div>
+</th>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/model/exception/IllegalMoveException.html" title="class in com.nickbenn.onehundred.model.exception">IllegalMoveException</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
-</tr>
-<tr id="i12" class="altColor">
-<td class="colFirst"><a href="com/nickbenn/onehundred/view/Keys.html" title="class in com.nickbenn.onehundred.view">Keys</a></td>
 <th class="colLast" scope="row">
-<div class="block">Constants used as property keys for user-facing strings, read from the <code>addition</code> or
- <code>subtraction</code> resource bundle, according to the <a href="com/nickbenn/onehundred/model/Game.Operation.html" title="enum in com.nickbenn.onehundred.model"><code>Game.Operation</code></a> configuration of the game.</div>
+<div class="block">Represents the exceptional condition resulting from an attempt to make an invalid move in an
+ ongoing game.</div>
 </th>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/controller/strategy/OptimalStrategy.html" title="class in com.nickbenn.onehundred.controller.strategy">OptimalStrategy</a></td>
 <th class="colLast" scope="row">
 <div class="block">Implements an optimal strategy for the normal (non-mis&#x00e8;re) form of the One Hundred game.</div>
 </th>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/controller/strategy/RandomStrategy.html" title="class in com.nickbenn.onehundred.controller.strategy">RandomStrategy</a></td>
 <th class="colLast" scope="row">
 <div class="block">Implements a random strategy for the normal (non-mis&#x00e8;re) form of the One Hundred game.</div>
 </th>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller">Referee</a></td>
 <th class="colLast" scope="row">
 <div class="block">Encapsulates the enforcement of the rules of the game, along with updates to the game state.</div>
 </th>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/controller/Referee.Builder.html" title="class in com.nickbenn.onehundred.controller">Referee.Builder</a>&lt;<a href="com/nickbenn/onehundred/controller/Referee.Builder.html" title="type parameter in Referee.Builder">B</a> extends <a href="com/nickbenn/onehundred/controller/Referee.Builder.html" title="class in com.nickbenn.onehundred.controller">Referee.Builder</a>&lt;<a href="com/nickbenn/onehundred/controller/Referee.Builder.html" title="type parameter in Referee.Builder">B</a>&gt;&gt;</td>
 <th class="colLast" scope="row">
 <div class="block">Implements (partially) the Builder pattern for constructing instances of <a href="com/nickbenn/onehundred/controller/Referee.html" title="class in com.nickbenn.onehundred.controller"><code>Referee</code></a>.</div>
 </th>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/controller/Session.html" title="class in com.nickbenn.onehundred.controller">Session</a></td>
 <th class="colLast" scope="row">
 <div class="block">Generalizes launch of user interaction session and access to command-line arguments.</div>
 </th>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a></td>
 <th class="colLast" scope="row">
 <div class="block">Declares the <code>abstract</code> method <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#getNextMove(com.nickbenn.onehundred.model.Game)"><code>Strategy.getNextMove(Game)</code></a> (which must be implemented in a
@@ -216,16 +229,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  and <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html#newInstance(java.lang.String,java.util.Random)"><code>Strategy.newInstance(String, Random)</code></a> <code>static</code> factory methods.</div>
 </th>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/controller/strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Encapsulates an unchecked exception, thrown when instantiation of a concrete subclass of
  <a href="com/nickbenn/onehundred/controller/strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><code>Strategy</code></a> fails, <em>for any reason</em>.</div>
 </th>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><a href="com/nickbenn/onehundred/view/TextGamePresentation.html" title="class in com.nickbenn.onehundred.view">TextGamePresentation</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Implements the <a href="com/nickbenn/onehundred/view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a> for the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a> type.</div>
+</th>
 </tr>
 </table>
 </li>

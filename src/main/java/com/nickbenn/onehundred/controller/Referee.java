@@ -17,6 +17,7 @@ import java.util.Objects;
  * {@link GamePresentation GamePresentation&lt;T&gt;} instance, provided via the
  * {@link Builder#Builder(GamePresentation)} instantiation.
  */
+@SuppressWarnings("JavadocDeclaration")
 public abstract class Referee {
 
   private final GamePresentation<?> presentation;

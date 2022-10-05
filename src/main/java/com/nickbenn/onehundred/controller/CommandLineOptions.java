@@ -133,9 +133,9 @@ public class CommandLineOptions {
   }
 
   /**
-   * Returns the game operation or direction (i.e. addition or subtraction) as an instance of the
-   * {@link Operation} {@code enum}. This value is taken either from the {@code args} passed to the
-   * {@link #parse(String[])} method, or from the default value specified in
+   * Returns the game operation or direction (that is, addition or subtraction) as an instance of
+   * the {@link Operation} {@code enum}. This value is taken either from the {@code args} passed to
+   * the {@link #parse(String[])} method, or from the default value specified in
    * {@link Game#DEFAULT_OPERATION}.
    *
    * @return

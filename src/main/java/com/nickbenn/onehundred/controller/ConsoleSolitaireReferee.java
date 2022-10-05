@@ -3,16 +3,14 @@
  */
 package com.nickbenn.onehundred.controller;
 
-import com.nickbenn.onehundred.model.Game;
 import com.nickbenn.onehundred.controller.strategy.Strategy;
 import com.nickbenn.onehundred.controller.strategy.Strategy.StrategyInitializationException;
+import com.nickbenn.onehundred.model.Game;
 import com.nickbenn.onehundred.view.GamePresentation;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.io.PrintWriter;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -26,6 +24,10 @@ import java.util.ResourceBundle;
  */
 public final class ConsoleSolitaireReferee extends Referee {
 
+  /**
+   * Key identifying (in {@code strategy.properties}) the subclass of {@link Strategy} used by
+   * default.
+   */
   public static final String DEFAULT_STRATEGY_KEY = "optimal";
 
   private final Strategy strategy;
@@ -84,9 +86,10 @@ public final class ConsoleSolitaireReferee extends Referee {
   }
 
   /**
-   *
+   * Concrete implementation of the Builder pattern used for constructing instances of
+   * {@link ConsoleSolitaireReferee}.
    */
-  @SuppressWarnings({"UnusedReturnValue", "unused"})
+  @SuppressWarnings({"unused", "JavadocDeclaration"})
   public static class Builder extends Referee.Builder<Builder> {
 
     private static final String NULL_STRATEGY_MESSAGE =
@@ -103,28 +106,55 @@ public final class ConsoleSolitaireReferee extends Referee {
     private Strategy strategy;
 
     /**
-     * @param presentation
-     * @param bundle
-     * @throws StrategyInitializationException
+     * Initialize this instance with the required parameter values. As is typical in implementations
+     * of this pattern, properties not specified as arguments to this constructor have default
+     * values, and may or may not be further specified using the methods of this class, as desired.
+     *
+     * @param presentation Instance of {@link GamePresentation GamePresentation&lt;T&gt;}
+     *                     implementation that will be responsible for constructing view artifacts
+     *                     presented to the user.
+     * @param bundle       {@link ResourceBundle} providing (potentially localized) {@link String}
+     *                     resources used by the {@link ConsoleSolitaireReferee}.
      */
     public Builder(GamePresentation<?> presentation, ResourceBundle bundle) {
       super(presentation);
       this.bundle = Objects.requireNonNull(bundle, NULL_BUNDLE_MESSAGE);
     }
 
+    /**
+     * Sets the {@link BufferedReader} instance that will be used by the
+     * {@link ConsoleSolitaireReferee} to obtain user input. If not set, a {@link BufferedReader}
+     * that reads from {@link System#in} will be used.
+     *
+     * @param input
+     * @return This {@link Builder} instance.
+     */
     public Builder setInput(BufferedReader input) {
       this.input = Objects.requireNonNull(input);
       return self();
     }
 
+    /**
+     * Sets the {@link PrintStream} instance that will be used by the
+     * {@link ConsoleSolitaireReferee} to present output to the user. If not set, {@link System#out}
+     * will be used.
+     *
+     * @param output
+     * @return This {@link Builder} instance.
+     */
     public Builder setOutput(PrintStream output) {
       this.output = Objects.requireNonNull(output);
       return self();
     }
 
     /**
+     * Sets the {@link Strategy} instance that will be used by the {@link ConsoleSolitaireReferee}
+     * to select the computer player's moves. If not set, an instance of the class identified (in
+     * {@code strategy.properties}) by {@link ConsoleSolitaireReferee#DEFAULT_STRATEGY_KEY} will be
+     * created and used.
+     *
      * @param strategy
-     * @return
+     * @return This {@link Builder} instance.
      */
     public Builder setStrategy(Strategy strategy) {
       this.strategy = Objects.requireNonNull(strategy, NULL_STRATEGY_MESSAGE);

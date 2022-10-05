@@ -141,6 +141,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public static class <span class="typeNameLabel">ConsoleSolitaireReferee.Builder</span>
 extends <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.controller">Referee.Builder</a>&lt;<a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a>&gt;</pre>
+<div class="block">Concrete implementation of the Builder pattern used for constructing instances of
+ <a href="ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller"><code>ConsoleSolitaireReferee</code></a>.</div>
 </li>
 </ul>
 </div>
@@ -163,7 +165,9 @@ extends <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.c
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.nickbenn.onehundred.view.GamePresentation,java.util.ResourceBundle)">Builder</a></span>&#8203;(<a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;?&gt;&nbsp;presentation,
        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ResourceBundle.html?is-external=true" title="class or interface in java.util" class="externalLink">ResourceBundle</a>&nbsp;bundle)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Initialize this instance with the required parameter values.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -196,17 +200,26 @@ extends <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.c
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setInput(java.io.BufferedReader)">setInput</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html?is-external=true" title="class or interface in java.io" class="externalLink">BufferedReader</a>&nbsp;input)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Sets the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html?is-external=true" title="class or interface in java.io" class="externalLink"><code>BufferedReader</code></a> instance that will be used by the
+ <a href="ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller"><code>ConsoleSolitaireReferee</code></a> to obtain user input.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOutput(java.io.PrintStream)">setOutput</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink">PrintStream</a>&nbsp;output)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Sets the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink"><code>PrintStream</code></a> instance that will be used by the
+ <a href="ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller"><code>ConsoleSolitaireReferee</code></a> to present output to the user.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStrategy(com.nickbenn.onehundred.controller.strategy.Strategy)">setStrategy</a></span>&#8203;(<a href="strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a>&nbsp;strategy)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Sets the <a href="strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><code>Strategy</code></a> instance that will be used by the <a href="ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller"><code>ConsoleSolitaireReferee</code></a>
+ to select the computer player's moves.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -247,12 +260,16 @@ extends <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.c
 <h4>Builder</h4>
 <pre>public&nbsp;Builder&#8203;(<a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view">GamePresentation</a>&lt;?&gt;&nbsp;presentation,
                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ResourceBundle.html?is-external=true" title="class or interface in java.util" class="externalLink">ResourceBundle</a>&nbsp;bundle)</pre>
+<div class="block">Initialize this instance with the required parameter values. As is typical in implementations
+ of this pattern, properties not specified as arguments to this constructor have default
+ values, and may or may not be further specified using the methods of this class, as desired.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>presentation</code> - </dd>
-<dd><code>bundle</code> - </dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="strategy/Strategy.StrategyInitializationException.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy.StrategyInitializationException</a></code></dd>
+<dd><code>presentation</code> - Instance of <a href="../view/GamePresentation.html" title="interface in com.nickbenn.onehundred.view"><code>GamePresentation&lt;T&gt;</code></a>
+                     implementation that will be responsible for constructing view artifacts
+                     presented to the user.</dd>
+<dd><code>bundle</code> - <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ResourceBundle.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>ResourceBundle</code></a> providing (potentially localized) <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a>
+                     resources used by the <a href="ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller"><code>ConsoleSolitaireReferee</code></a>.</dd>
 </dl>
 </li>
 </ul>
@@ -273,6 +290,15 @@ extends <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.c
 <li class="blockList">
 <h4>setInput</h4>
 <pre class="methodSignature">public&nbsp;<a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a>&nbsp;setInput&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html?is-external=true" title="class or interface in java.io" class="externalLink">BufferedReader</a>&nbsp;input)</pre>
+<div class="block">Sets the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html?is-external=true" title="class or interface in java.io" class="externalLink"><code>BufferedReader</code></a> instance that will be used by the
+ <a href="ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller"><code>ConsoleSolitaireReferee</code></a> to obtain user input. If not set, a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html?is-external=true" title="class or interface in java.io" class="externalLink"><code>BufferedReader</code></a>
+ that reads from <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html?is-external=true#in" title="class or interface in java.lang" class="externalLink"><code>System.in</code></a> will be used.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>This <a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller"><code>ConsoleSolitaireReferee.Builder</code></a> instance.</dd>
+</dl>
 </li>
 </ul>
 <a id="setOutput(java.io.PrintStream)">
@@ -282,6 +308,15 @@ extends <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.c
 <li class="blockList">
 <h4>setOutput</h4>
 <pre class="methodSignature">public&nbsp;<a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a>&nbsp;setOutput&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink">PrintStream</a>&nbsp;output)</pre>
+<div class="block">Sets the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink"><code>PrintStream</code></a> instance that will be used by the
+ <a href="ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller"><code>ConsoleSolitaireReferee</code></a> to present output to the user. If not set, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html?is-external=true#out" title="class or interface in java.lang" class="externalLink"><code>System.out</code></a>
+ will be used.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>output</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>This <a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller"><code>ConsoleSolitaireReferee.Builder</code></a> instance.</dd>
+</dl>
 </li>
 </ul>
 <a id="setStrategy(com.nickbenn.onehundred.controller.strategy.Strategy)">
@@ -291,10 +326,15 @@ extends <a href="Referee.Builder.html" title="class in com.nickbenn.onehundred.c
 <li class="blockList">
 <h4>setStrategy</h4>
 <pre class="methodSignature">public&nbsp;<a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller">ConsoleSolitaireReferee.Builder</a>&nbsp;setStrategy&#8203;(<a href="strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy">Strategy</a>&nbsp;strategy)</pre>
+<div class="block">Sets the <a href="strategy/Strategy.html" title="class in com.nickbenn.onehundred.controller.strategy"><code>Strategy</code></a> instance that will be used by the <a href="ConsoleSolitaireReferee.html" title="class in com.nickbenn.onehundred.controller"><code>ConsoleSolitaireReferee</code></a>
+ to select the computer player's moves. If not set, an instance of the class identified (in
+ <code>strategy.properties</code>) by <a href="ConsoleSolitaireReferee.html#DEFAULT_STRATEGY_KEY"><code>ConsoleSolitaireReferee.DEFAULT_STRATEGY_KEY</code></a> will be
+ created and used.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>strategy</code> - </dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>This <a href="ConsoleSolitaireReferee.Builder.html" title="class in com.nickbenn.onehundred.controller"><code>ConsoleSolitaireReferee.Builder</code></a> instance.</dd>
 </dl>
 </li>
 </ul>
