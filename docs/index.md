@@ -13,10 +13,10 @@ options on the command line:
 
 | Option                            | Description                                                                                                                                                                                        |
 |:----------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `-?`, `--help`                    | Displays this usage and instructions screen.                                                                                                                                                       |
+| `-?`, `--help`                    | Displays a usage and instructions screen (i.e. the contents of this table).                                                                                                                        |
 | `-b`, `--bound `*`<upper bound>`* | Specifies the target sum (for addition game) or initial value (for subtraction game); the default is 100.                                                                                          |
 | `-m`, `--max `*`<maximum move size>`* | Specifies the maximum number that can be added to (for addition game) or subtracted from (for subtraction game) the current value in any single move; the default is 10.                           |
 | `-o`, `--operation `*`<move operation>`* | Specifies the arithmetic operation used in a game. Specify ADDITION for an addition game, and `SUBTRACTION` for a subtraction game; the default is `ADDITION`. (This value is not case-sensitive.) |
-| `-s`, `--strategy `*`<computer strategy>`* | Specifies the move strategy used by the computer. The supported values are `OPTIMAL` and `RANDOM`; the default is `OPTIMAL`. (This value is not case-sensitive.) |
+| `-s`, `--strategy `*`<computer strategy>`* | Specifies the move strategy used by the computer. The supported values are `OPTIMAL` and `RANDOM`; the default is `OPTIMAL`. (This value is not case-sensitive.)                                   |
 
 [Javadocs](api/)
