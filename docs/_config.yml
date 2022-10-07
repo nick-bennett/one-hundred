@@ -1,7 +1,6 @@
-author:
-  name: Nick Bennett
-  email: nick@nickbenn.com
 title: One Hundred
 titles_from_headings:
   enabled: false
+author: Nick Bennett
+github_username: nick-bennett
 theme: minima
