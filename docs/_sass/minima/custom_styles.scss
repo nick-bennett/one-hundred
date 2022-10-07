@@ -1,0 +1,13 @@
+header {
+  &.site-header {
+    div {
+      &.wrapper {
+        a {
+          &.site-title {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
