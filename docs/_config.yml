@@ -3,4 +3,4 @@ titles_from_headings:
   enabled: false
 author: Nick Bennett
 github_username: nick-bennett
-theme: minima
+theme: jekyll-theme-minima
