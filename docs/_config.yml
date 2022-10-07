@@ -1,7 +1,7 @@
-theme: minima
-title: One Hundred
 author:
   name: Nick Bennett
   email: nick@nickbenn.com
+title: One Hundred
 titles_from_headings:
   enabled: false
+theme: minima
