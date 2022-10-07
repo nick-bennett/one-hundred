@@ -1,6 +1,11 @@
 title: One Hundred
 titles_from_headings:
   enabled: false
-author: Nick Bennett
-github_username: nick-bennett
+author:
+  name: Nick Bennett
+  email: nick@nickbenn.com
+minima:
+  social_links:
+    github: nick-bennett
+    linkedin: nickbenn
 remote_theme: jekyll/minima
