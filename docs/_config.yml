@@ -9,4 +9,6 @@ minima:
   social_links:
     github: nick-bennett
     linkedin: nickbenn
+header_pages:
+  - api/index.html
 remote_theme: jekyll/minima
