@@ -73,7 +73,7 @@ public abstract class Strategy {
       Properties properties = new Properties();
       properties.load(input);
       String className = properties.getProperty(key);
-      //noinspection unchecked
+      @SuppressWarnings("unchecked")
       Class<? extends Strategy> klass = (Class<? extends Strategy>) Class.forName(className);
       Constructor<?> constructor = klass.getConstructor(Random.class);
       return (Strategy) constructor.newInstance(rng);

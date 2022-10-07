@@ -9,6 +9,8 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(11)
     }
+    withSourcesJar()
+    withJavadocJar()
 }
 
 application {
@@ -49,6 +51,13 @@ javadoc {
 
 }
 
+task testsJar(type: Jar, dependsOn: testClasses) {
+    //noinspection GroovyAccessibility
+    archiveClassifier = 'tests'
+    from sourceSets.test.output
+}
+
 assemble {
-    dependsOn javadoc
+//    dependsOn installDist, test, jar, sourcesJar, javadocJar, testsJar
+    dependsOn installDist, jar, sourcesJar, javadocJar
 }
