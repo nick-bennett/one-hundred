@@ -8,7 +8,7 @@ In this implementation the players are the user and the computer, with the user 
 
 ### Distribution archives  
 
-The code in this repository is configured for building with Gradle, using the Gradle wrapper. To build `.tar` and `.zip` distribution archives (including `.jar` files for the application code and all supporting libraries, as well as launcher scripts for Windows, OS X, and Linux), execute the following:
+The code for this application is written in Java, and configured for building with Gradle, using the Gradle wrapper. To build `.tar` and `.zip` distribution archives (including `.jar` files for the application code and all supporting libraries, as well as launcher scripts for Windows, OS X, and Linux), execute the following:
 
 ```shell
 gradlew assembleDist
