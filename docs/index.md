@@ -1,6 +1,6 @@
 ## Description
 
-_One Hundred_ is a simple mathematical game, in which players take turns adding to or subtracting from a running total until the target value is reached. 100 is the default target for the addition game; 0 is the target for the subtraction game, and the players start at 100 by default. The player whose move causes the total to reach the target value _exactly_ is the winner.
+_One Hundred_ is a simple mathematical game, in which players take turns adding to or subtracting from a running total until the target value is reached. In the addition variant of the game, 100 is the default target; in the subtraction game, 0 is the target, and the players start at 100 by default. The player whose move causes the total to reach the target value _exactly_ is the winner.
 
 In this implementation the players are the user and the computer, with the user making the first move in the first game, and the first move alternating between the computer and the user in successive games.
 
