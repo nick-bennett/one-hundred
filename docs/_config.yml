@@ -1,6 +1,5 @@
 theme: minima
 title: One Hundred
-description: "A console-mode implementation of a simple form of the mathematical game _Nim_."
 author:
   name: Nick Bennett
   email: nick@nickbenn.com
