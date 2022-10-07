@@ -1,2 +1,7 @@
+theme: minima
 title: One Hundred
-theme: jekyll-theme-midnight
+description: "A console-mode implementation of a simple form of the mathematical game _Nim_."
+author:
+  name: Nick Bennett
+  email: nick@nickbenn.com
+
