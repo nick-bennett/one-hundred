@@ -5,7 +5,7 @@ author:
   name: Nick Bennett
   email: nick@nickbenn.com
 minima:
-#  skin: solarized
+  skin: solarized
   social_links:
     github: nick-bennett
     linkedin: nickbenn
