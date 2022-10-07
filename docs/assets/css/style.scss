@@ -1,0 +1,8 @@
+---
+---
+
+@import "minima/skins/{{ site.minima.skin | default: 'auto' }}", "minima/initialize";
+
+header.site-header > div.wrapper > a.site-title {
+  font-weight: 400;
+}
