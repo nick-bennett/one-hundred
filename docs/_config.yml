@@ -4,4 +4,5 @@ description: "A console-mode implementation of a simple form of the mathematical
 author:
   name: Nick Bennett
   email: nick@nickbenn.com
-
+titles_from_headings:
+  enabled: false
