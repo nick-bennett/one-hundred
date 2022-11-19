@@ -2,6 +2,7 @@
  * Copyright 2022 Nicholas Bennett. See LICENSE for software license terms.
  */
 plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'application'
 }
 
@@ -45,19 +46,21 @@ javadoc {
 
     destinationDir = file("$projectDir/docs/api")
 
+    //noinspection GroovyAssignabilityCheck
     options {
+        //noinspection GrUnresolvedAccess
         links "https://docs.oracle.com/en/java/javase/11/docs/api/"
     }
 
 }
 
 task testsJar(type: Jar, dependsOn: testClasses) {
-    //noinspection GroovyAccessibility
+    //noinspection GroovyAssignabilityCheck
     archiveClassifier = 'tests'
     from sourceSets.test.output
 }
 
 assemble {
-//    dependsOn installDist, test, jar, sourcesJar, javadocJar, testsJar
-    dependsOn installDist, jar, sourcesJar, javadocJar
+//    dependsOn installDist, test, jar, shadowJar, sourcesJar, javadocJar, testsJar
+    dependsOn installDist, jar, shadowJar, sourcesJar, javadocJar
 }
