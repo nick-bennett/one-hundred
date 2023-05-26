@@ -54,4 +54,4 @@ For example, the following would launch the application for a subtraction game, 
 one-hundred -o subtraction -b 50 -m 8
 ```
 
-## [Javadocs](api/)  
+## [Javadocs](api/){:target='_blank"} 
